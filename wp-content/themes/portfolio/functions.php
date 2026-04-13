@@ -3,12 +3,12 @@
 include ('core/theme/configuration.php');
 
 //Ajoute le support de menu, qui va aficher l'onglet dans wordpress.
-add_theme_support('menus');
 // Déclaration des menus dans wordpress
 register_nav_menu('header', 'Le menu de navigation principal'); //A le nom header
+register_nav_menu('footer', 'Le menu du footer'); //A le nom header
 
 
-/*register_nav_menu('footer', 'Le menu de navigation de fin de page');
+/*
 register_nav_menu('social-media', 'Le menu de navigation pour les réseaux sociaux');
 register_nav_menu('utils', 'Le menu de navigation pour les ressources utiles');*/
 
@@ -23,16 +23,9 @@ register_post_type('project', [ //Nom du tout
     'show_ui' => true,
     //à mettre s'il est en public false, mais qu'on veut le voir dans le back-office
     'has_archive' => true,
+    'rewrite' => ['slug' => 'projets'],
     'supports' => ['title'],
 ]);
-
-
-
-
-
-
-
-
 
 
 
@@ -62,6 +55,7 @@ function dw_get_navigation_links(string $location): array {
   return $links;
 }
 
+
 // Fonction qui retourne l'URL d'un asset (css ou js) compilé par Vite
 function dw_asset(string $file): string {
 
@@ -78,18 +72,18 @@ function dw_asset(string $file): string {
     $manifest = json_decode(file_get_contents($manifest_path), true);
 
     // Vérifie si l'entrée CSS existe dans le manifest ET si on demande un fichier de type "css"
-    if (isset($manifest['wp-content/themes/theme_1/assets/css/styles.scss']) && $file === 'css') {
+    if (isset($manifest['wp-content/themes/portfolio/assets/css/styles.scss']) && $file === 'css') {
 
       // Retourne l'URL publique vers le fichier CSS compilé
       // ['file'] contient le nom final généré par Vite (avec hash)
-      return get_theme_file_uri('public/' . $manifest['wp-content/themes/theme_1/assets/css/styles.scss']['file']);
+      return get_theme_file_uri('public/' . $manifest['wp-content/themes/portfolio/assets/css/styles.scss']['file']);
     }
 
     // Vérifie si l'entrée JS existe dans le manifest ET si on demande un fichier de type "js"
-    if (isset($manifest['wp-content/themes/theme_1/assets/js/main.js']) && $file === 'js') {
+    if (isset($manifest['wp-content/themes/portfolio/assets/js/main.js']) && $file === 'js') {
 
       // Retourne l'URL publique vers le fichier JS compilé
-      return get_theme_file_uri('public/' . $manifest['wp-content/themes/theme_1/assets/js/main.js']['file']);
+      return get_theme_file_uri('public/' . $manifest['wp-content/themes/portfolio/assets/js/main.js']['file']);
     }
   }
 

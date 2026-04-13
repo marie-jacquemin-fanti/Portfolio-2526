@@ -12,21 +12,10 @@
 
 
 <body>
-<nav> Menu de navigation par Wordpress
-    <h2 class="sro">Menu de navigation</h2>
-    <!-- Déclaration de mon menu -->
-    <?php wp_nav_menu([
-        'theme_location' => 'header',
-        'container' => 'nav', //Remplace la div mise par défaut par wordpres en balise nav
-        'menu_class' => 'ul-container', //Le nom de class que l'on souhaite lui donnée
-        'container_class' => 'div-container',
-    ]); ?>
-
-</nav>
 
 <!-- Navigation homemade -->
 <nav class="navigation">
-
+    <h2 class="sro">Menu de navigation</h2>
     <ul class="navigation__list">
         <?php foreach (dw_get_navigation_links('header') as $link) : ?>
             <li class="navigation__list-item">

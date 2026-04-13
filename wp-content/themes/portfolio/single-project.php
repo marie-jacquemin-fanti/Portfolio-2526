@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Si on à des posts, on boucle dessus et on affiche le bon post. -->
+<!-- Afficher le bon projet quand on le choisie sur wordpress -->
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
     <?php
