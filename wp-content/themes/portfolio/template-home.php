@@ -30,8 +30,10 @@ $query = new WP_Query([
 ?>
 
     <p><?= $suptitle ?></p>
-    <h2> <?= $title ?> </h2>
-    <p><?= $subtitle ?></p>
+    <section>
+        <h2> <?= $title ?> </h2>
+        <p><?= $subtitle ?></p>
+    </section>
 
 
 <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post();
@@ -42,14 +44,14 @@ $query = new WP_Query([
     $project_image = get_field('project_image');
     ?>
 
-
+    <!-- Projet -->
     <section>
-        <h2><?= $project_title ?></h2>
+        <?php if ($project_title): ?>
+            <h2><?= $project_title ?></h2>
+        <?php endif; ?>
         <?php if ($project_description): ?>
-        <p><?= $project_description ?></p>
-        <?php else: ?>
-            <?php die('Il faut mettre une description');?>
-        <?php endif;?>
+            <p><?= $project_description ?></p>
+        <?php endif; ?>
         <?php if ($project_image): ?>
             <img
                     src="<?= $project_image['url'] ?>"
@@ -57,16 +59,14 @@ $query = new WP_Query([
                     width="<?= $project_image['width'] ?>"
                     height="<?= $project_image['height'] ?>"
             >
-        <?php else: ?>
-        <?php die('Il faut mettre une image au projet');?>
-    <?php endif;?>
+        <?php endif; ?>
         <a href="<?= get_the_permalink() ?>" title="Lien vers ma page de projet : <?= get_the_title() ?>"
            target="_blank">En savoir plus !</a>
     </section>
-<?php endwhile; else: ?>
-    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif;
-wp_reset_postdata(); ?>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<?php wp_reset_postdata(); ?>
 
     <!-- Intéresser ? -->
 <?php if ($text_media_title_1): ?>
@@ -99,3 +99,4 @@ wp_reset_postdata(); ?>
 
 
 <?php get_footer(); ?>
+
