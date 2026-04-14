@@ -10,11 +10,25 @@
   border-width: 0;
 }
 
-//a {
-//  background-color: white;
-//  color: black;
-//  text-decoration: none;
-//  border: solid 1px;
-//  border-radius: 20px;
-//  padding: 13px 15px;
-//}
+//Nav bar
+.navigation__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation__link {
+  font-family: var(--font-family-alberSans), sans-serif;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 13px 15px;
+}
+
+/*a {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border: solid 1px;
+  border-radius: 20px;
+  padding: 13px 15px;
+  }*/
