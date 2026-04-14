@@ -70,8 +70,7 @@ $query = new WP_Query([
         <a href="<?= get_the_permalink() ?>" title="Lien vers ma page de projet : <?= get_the_title() ?>"
            target="_blank">En savoir plus !</a>
     </section>
-<?php endwhile; else: ?>
-    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endwhile; ?>
 <?php endif;
 wp_reset_postdata(); ?>
 <?php get_footer(); ?>

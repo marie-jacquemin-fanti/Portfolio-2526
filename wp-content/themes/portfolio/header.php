@@ -23,13 +23,14 @@
             </li>
         <?php endforeach; ?>
 
-        <?php foreach (pll_the_languages(['raw' => true]) as $lang): ?>
-            <li class="navigation__list-item-language <?= $lang['current_lang'] ? 'navigation__list-item-language--active' : '' ?>">
-                <a class="navigation__link-language" lang="<?= $lang['locale'] ?>"
-                   hreflang="<?= $lang['locale'] ?>"
-                   href="<?= $lang['url'] ?>"><?= strtoupper($lang['slug']) ?></a>
+        <!-- Fait apparaitre le FR et EN sur la page accueil -->
+       <!-- <?php /*foreach (pll_the_languages(['raw' => true]) as $lang): */?>
+            <li class="navigation__list-item-language <?php /*= $lang['current_lang'] ? 'navigation__list-item-language--active' : '' */?>">
+                <a class="navigation__link-language" lang="<?php /*= $lang['locale'] */?>"
+                   hreflang="<?php /*= $lang['locale'] */?>"
+                   href="<?php /*= $lang['url'] */?>"><?php /*= strtoupper($lang['slug']) */?></a>
             </li>
-        <?php endforeach; ?>
+        --><?php /*endforeach; */?>
 
     </ul>
 
