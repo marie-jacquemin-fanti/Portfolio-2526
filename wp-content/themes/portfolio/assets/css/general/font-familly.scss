@@ -1,10 +1,28 @@
 :root {
   --font-family-alberSans: "AlbertSans", "Inter", "Roboto", "Helvetica Neue", Arial;
+  --font-family-alberSansLight: "AlbertSansLight", "Inter", "Roboto", "Helvetica Neue", Arial;
+  --font-family-SegoePrint: "SegoePrint", "Comic Sans MS", "Bradley Hand", "Chalkboard SE", cursive;;
 }
 
 @font-face {
   src: url('../../../assets/fonts/AlbertSans-Regular.ttf') format('TrueType');
   font-family: 'AlberSans';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url('../../../assets/fonts/AlbertSans-Light.ttf') format('TrueType');
+  font-family: 'AlbertSansLight';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  src: url('../../fonts/Segoe-Print-Regular.ttf') format('TrueType');
+  font-family: 'SegoePrint';
   font-display: swap;
   font-style: normal;
   font-weight: 400;

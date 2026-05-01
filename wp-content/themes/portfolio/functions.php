@@ -91,6 +91,10 @@ function dw_asset(string $file): string {
   return '';
 }
 
+add_image_size('square-small', 600, 400, true); //TODO : Revoir !
+
+
+
 // Ajouts d'une page d'option (exemple de la documentation)
 /*acf_add_options_page(array(
     'page_title' => 'Theme General Settings',

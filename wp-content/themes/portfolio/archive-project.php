@@ -43,34 +43,61 @@ $query = new WP_Query([
     </div>-->
 
 
-    <!-- Afficher tout les projets -->
-<?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post();
-    $project_title = get_field('project_title');
-    $project_description = get_field('project_description');
-    $project_button = get_field('project_button');
-    $project_image = get_field('project_image');
-    ?>
-    <section>
-        <h2><?= $project_title ?></h2>
-        <?php if ($project_description): ?>
-            <p><?= $project_description ?></p>
-        <?php else: ?>
-            <?php die('Il faut mettre une description'); ?>
-        <?php endif; ?>
-        <?php if ($project_image): ?>
-            <img
-                    src="<?= $project_image['url'] ?>"
-                    alt="<?= $project_image['alt'] ?>"
-                    width="<?= $project_image['width'] ?>"
-                    height="<?= $project_image['height'] ?>"
-            >
-        <?php else: ?>
-            <?php die('Il faut mettre une image au projet'); ?>
-        <?php endif; ?>
-        <a href="<?= get_the_permalink() ?>" title="Lien vers ma page de projet : <?= get_the_title() ?>"
-           target="_blank">En savoir plus !</a>
+    <!-- Afficher tous les projets -->
+    <section class="section__project">
+    <h2 class="sro">Mes projets</h2>
+<?php if ($query->have_posts()):
+    while ($query->have_posts()): $query->the_post();
+        $project_title = get_field('project_title');
+        $project_description = get_field('project_description');
+        $project_button = get_field('project_button');
+        $project_image = get_field('project_image');
+        ?>
+        <article class="projects">
+            <div class="project">
+                <?php if ($project_title): ?>
+                    <h3 class="project__title"><?= $project_title ?></h3>
+                <?php endif; ?>
+                <?php if ($project_description): ?>
+                    <p class="project__text"><?= $project_description ?></p>
+                <?php endif; ?>
+                <a class="buttons" href="<?= get_the_permalink() ?>"
+                   title="Lien vers mon projet : <?= get_the_title() ?>"
+                   target="_blank">EN SAVOIR PLUS !</a>
+            </div>
+
+            <?php if ($project_image): ?>
+                <div class="stack">
+                    <div class="card card-1">
+                        <img class="project__image"
+                             src="<?= $project_image['url'] ?>"
+                             alt="<?= $project_image['alt'] ?>"
+                             width="<?= $project_image['width'] ?>"
+                             height="<?= $project_image['height'] ?>"
+                        >
+                    </div>
+                    <div class="card card-2">
+                        <img class="project__image"
+                             src="<?= $project_image['url'] ?>"
+                             alt="<?= $project_image['alt'] ?>"
+                             width="<?= $project_image['width'] ?>"
+                             height="<?= $project_image['height'] ?>"
+                        >
+                    </div>
+                    <div class="card card-3">
+                        <img class="project__image"
+                             src="<?= $project_image['url'] ?>"
+                             alt="<?= $project_image['alt'] ?>"
+                             width="<?= $project_image['width'] ?>"
+                             height="<?= $project_image['height'] ?>"
+                        >
+                    </div>
+                </div>
+            <?php endif; ?>
+        </article>
+
+    <?php endwhile; ?>
     </section>
-<?php endwhile; ?>
-<?php endif;
-wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
 <?php get_footer(); ?>
