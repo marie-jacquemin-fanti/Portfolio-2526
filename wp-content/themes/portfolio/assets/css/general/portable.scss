@@ -8,8 +8,21 @@
     border-radius: 1.563rem;
     display: inline-block;
     font-size: 1rem;
-    padding: 0.5rem 0.938rem;
+    padding: 0.5rem 1rem;
     margin: 0.625rem 0;
+  }
+  //Titre
+  .project__title, .interest__title, .about-me__title {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    font-size: 3.125rem;
+    padding-bottom: 0.625rem;
+  }
+  //Texte
+  .project__text, .interest__text, .about-me__text {
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1rem;
+    line-height: 2.188rem;
+    max-width: 37.5rem;
   }
 
   //projets
@@ -21,19 +34,8 @@
       padding-top: 5rem;
       text-align: center;
     }
-
-    &__title {
-      font-family: var(--font-family-alberSansLight), sans-serif;
-      font-size: 3.125rem;
-      padding-bottom: 0.625rem;
-    }
-
-    &__text {
-      font-family: var(--font-family-SegoePrint), sans-serif;
-      font-size: 1rem;
-      line-height: 2.188rem;
-      max-width: 37.5rem;
-      padding: 0 1.563rem;
+    &__content{
+      padding: 0 2rem;
     }
 
     &__image {
@@ -42,7 +44,7 @@
       border: 10px solid var(--white-color);
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
       display: block;
-      padding: -50px;
+      padding: -3rem;
     }
   }
   .stack {
@@ -51,5 +53,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  //Intéresser
+  .interest {
+    text-align: center;
+    padding-top: 5rem;
   }
 }

@@ -12,6 +12,20 @@
     margin: 0.625rem 0;
   }
 
+  //Titre
+  .project__title, .interest__title, .about-me__title {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    font-size: 4.125rem;
+    padding-bottom: 0.625rem;
+  }
+  //Texte
+  .project__text, .interest__text, .about-me__text {
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1.125rem;
+    line-height: 2.188rem;
+    max-width: 37.5rem;
+  }
+
   .navigation {
     display: flex;
     justify-content: space-between;
@@ -19,9 +33,9 @@
     gap: 2rem;
 
     max-width: 1200px;
-    width: 100%;        /* important */
+    width: 100%; /* important */
     margin: 0 auto;
-    padding: 0 1.5rem;  /* espace sur les côtés */
+    padding: 0 1.5rem; /* espace sur les côtés */
 
     box-sizing: border-box;
 
@@ -90,17 +104,8 @@
       gap: 2rem;
     }
 
-    &__title {
-      font-family: var(--font-family-alberSansLight), sans-serif;
-      font-size: 4.125rem;
-      padding-bottom: 0.625rem;
-    }
-
-    &__text {
-      font-family: var(--font-family-SegoePrint), sans-serif;
-      font-size: 1.125rem;
-      line-height: 2.188rem;
-      max-width: 37.5rem;
+    &__content{
+      padding: 0 4rem;
     }
 
     &__image {
@@ -119,18 +124,19 @@
     justify-content: center;
     align-items: center;
   }
-  .text-media {
+  //Intéresser
+  .interest {
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 13.75rem;
-  }
+    padding-top: 9.5rem;
 
-  .text-media__text {
-    font-family: var(--font-family-SegoePrint), sans-serif;
-    font-size: 1.125rem;
-    margin: 0 auto;
-    line-height: 2.188rem;
-    max-width: 37.5rem;
+    &__text {
+      font-family: var(--font-family-SegoePrint), sans-serif;
+      font-size: 1.125rem;
+      margin: 0 auto;
+      line-height: 2.188rem;
+      max-width: 37.5rem;
+    }
   }
 
 
@@ -157,16 +163,6 @@
       max-width: 37.5rem;
     }
   }
-
-
-
-
-
-
-
-
-
-
 
 
   .education__title, .education__text {

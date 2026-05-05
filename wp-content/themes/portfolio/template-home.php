@@ -93,12 +93,12 @@ $query = new WP_Query([
 <?php wp_reset_postdata(); ?>
 
 <!-- Intéresser ? -->
-<section class="text-media">
+<section class="interest">
     <?php if ($text_media_title_1): ?>
-        <h3 class="about-me__title"> <?= $text_media_title_1 ?> </h3>
+        <h3 class="interest__title"> <?= $text_media_title_1 ?> </h3>
     <?php endif; ?>
     <?php if ($text_media_description_1): ?>
-        <p class="text-media__text"> <?= $text_media_description_1 ?> </p>
+        <p class="interest__text"> <?= $text_media_description_1 ?> </p>
     <?php endif; ?>
     <?php if ($text_media_button_1): ?>
         <a class="buttons" href="<?= $text_media_button_1 ?>"><?= $text_media_button_1['title'] ?></a>
