@@ -104,3 +104,10 @@ add_image_size('square-small', 600, 400, true); //TODO : Revoir !
     'redirect' => false
 ));*/
 
+//SVG
+function autoriser_svg_upload($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'autoriser_svg_upload');
+
