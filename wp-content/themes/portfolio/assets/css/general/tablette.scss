@@ -1,3 +1,55 @@
-@media (min-width: 768px) {
+@media screen and (max-width: 1023px) and (min-width: 600px) {
+  //Bouton
+  .buttons {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    text-decoration: none;
+    border-radius: 1.563rem;
+    display: inline-block;
+    font-size: 1.25rem;
+    padding: 0.5rem 0.938rem;
+    margin: 0.625rem 0;
+  }
 
+  //projets
+  .project {
+        &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 9.5rem;
+      gap: 2rem;
+    }
+
+    &__title {
+      font-family: var(--font-family-alberSansLight), sans-serif;
+      font-size: 4.125rem;
+      padding-bottom: 0.625rem;
+    }
+
+    &__text {
+      font-family: var(--font-family-SegoePrint), sans-serif;
+      font-size: 1.25rem;
+      line-height: 2.188rem;
+      max-width: 37.5rem;
+    }
+
+    &__image {
+      max-width: 36.25rem;
+      height: auto;
+      border: 10px solid var(--white-color);
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+      display: block;
+      padding: -50px;
+    }
+  }
+  .stack {
+    width: 700px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

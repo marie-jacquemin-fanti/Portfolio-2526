@@ -16,5 +16,24 @@ body {
 }
 
 
+.card {
+  position: absolute;
+  background-color: var(--white-color);
+}
+
+.card-1 {
+  transform: rotate(0.45deg);
+  z-index: 3;
+}
+
+.card-2 {
+  transform: rotate(7.25deg);
+  z-index: 2;
+}
+
+.card-3 {
+  transform: rotate(-5.33deg);
+  z-index: 1;
+}
 
 
