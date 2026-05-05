@@ -1,10 +1,29 @@
-@media (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
+  //Bouton
+  .buttons {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    text-decoration: none;
+    border-radius: 1.563rem;
+    display: inline-block;
+    font-size: 1.25rem;
+    padding: 0.813rem 1.25rem;
+    margin: 0.625rem 0;
+  }
+
   .navigation {
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
     align-items: center;
-    font-family: var(--font-family-alberSans), sans-serif;
-    padding: 0.13rem 0.15rem;
+    gap: 2rem;
+
+    max-width: 1200px;
+    width: 100%;        /* important */
+    margin: 0 auto;
+    padding: 0 1.5rem;  /* espace sur les côtés */
+
+    box-sizing: border-box;
 
     ul {
       display: flex;
@@ -59,10 +78,6 @@
 
   //projets
   .project {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-
     &__container:nth-child(odd) {
       flex-direction: row-reverse;
     }
@@ -71,8 +86,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 12.5rem;
-      gap: 8rem;
+      padding-top: 9.5rem;
+      gap: 2rem;
     }
 
     &__title {
@@ -83,7 +98,7 @@
 
     &__text {
       font-family: var(--font-family-SegoePrint), sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       line-height: 2.188rem;
       max-width: 37.5rem;
     }
@@ -97,7 +112,13 @@
       padding: -50px;
     }
   }
-
+  .stack {
+    width: 700px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .text-media {
     margin: 0 auto;
     text-align: center;
@@ -106,7 +127,7 @@
 
   .text-media__text {
     font-family: var(--font-family-SegoePrint), sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin: 0 auto;
     line-height: 2.188rem;
     max-width: 37.5rem;
@@ -131,54 +152,15 @@
 
     &__text {
       font-family: var(--font-family-SegoePrint), sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       line-height: 2.188rem;
       max-width: 37.5rem;
     }
   }
 
 
-  .buttons {
-    font-family: var(--font-family-alberSansLight), sans-serif;
-    background-color: var(--white-color);
-    color: var(--black-color);
-    text-decoration: none;
-    border-radius: 1.563rem;
-    display: inline-block;
-    font-size: 1.25rem;
-    padding: 0.813rem 1.25rem;
-    margin: 0.625rem 0;
-  }
-
-  .stack {
-    position: relative;
-    width: 700px;
-    height: 300px;
-  }
-
-  .card {
-    position: absolute;
-    background-color: var(--white-color);
-  }
 
 
-  /* Variations (le "tas") */
-  .card-1 {
-    transform: rotate(0.45deg);
-    z-index: 3;
-  }
-
-  .card-2 {
-    transform: rotate(7.25deg);
-    z-index: 2;
-  }
-
-  .card-3 {
-    transform: rotate(-5.33deg);
-    z-index: 1;
-  }
-
-  /* Intéresser ? */
 
 
 
