@@ -135,10 +135,10 @@
         <h3>Le rendu</h3>
         <p><?= get_field('rendering_description') ?></p>
         <img
-                src="<?= $text_media_image_2['url'] ?>"
-                alt="<?= $text_media_image_2['alt'] ?>"
-                width="<?= $text_media_image_2['width'] ?>"
-                height="<?= $text_media_image_2['height'] ?>"
+                src=""
+                alt=""
+                width=""
+                height=""
         >
     </div>
 

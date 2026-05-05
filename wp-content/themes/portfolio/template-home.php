@@ -1,4 +1,4 @@
-<?php /* Template Name: Page d'accueil */ ?>
+<?php /* Template Name: Home page */ ?>
 <?php get_header(); ?>
 
 <?php
@@ -14,11 +14,11 @@ $text_media_description_1 = get_field('text-media-description_1');
 $text_media_button_1 = get_field('text-media-button_1');
 $project_image = get_field('project_image');
 
-//Texte média 2
-$text_media_title_2 = get_field('text-media_title_2');
-$text_media_description_2 = get_field('text-media-description_2');
-$text_media_button_2 = get_field('text-media-button_2');
-$text_media_image_2 = get_field('text-media-image_2');
+//Section à propos de moi
+$title_about_me = get_field('title_about_me');
+$description_about_me = get_field('description_about_me');
+$button_about_me = get_field('button_about_me');
+$image_about_me = get_field('image_about_me');
 
 
 //Une boucle personnaliser qui va faire apparaitre les projets de nos CPT.
@@ -36,7 +36,7 @@ $query = new WP_Query([
 </section>
 
 <!-- Afficher tous les projets -->
-<section class="section__project">
+<section class="project">
     <h2 class="sro">Mes projets</h2>
     <?php if ($query->have_posts()):
     while ($query->have_posts()): $query->the_post();
@@ -45,8 +45,8 @@ $query = new WP_Query([
         $project_button = get_field('project_button');
         $project_image = get_field('project_image');
         ?>
-        <article class="projects">
-            <div class="project">
+        <article class="project__container">
+            <div class="project__content">
                 <?php if ($project_title): ?>
                     <h3 class="project__title"><?= $project_title ?></h3>
                 <?php endif; ?>
@@ -87,7 +87,6 @@ $query = new WP_Query([
                 </div>
             <?php endif; ?>
         </article>
-
     <?php endwhile; ?>
 </section>
 <?php endif; ?>
@@ -96,35 +95,35 @@ $query = new WP_Query([
 <!-- Intéresser ? -->
 <section class="text-media">
     <?php if ($text_media_title_1): ?>
-        <h3 class="text-media__title"> <?= $text_media_title_1 ?> </h3>
+        <h3 class="about-me__title"> <?= $text_media_title_1 ?> </h3>
     <?php endif; ?>
     <?php if ($text_media_description_1): ?>
         <p class="text-media__text"> <?= $text_media_description_1 ?> </p>
     <?php endif; ?>
     <?php if ($text_media_button_1): ?>
-        <a class="buttons" href="<?= $text_media_button_1 ?>">VOIR PLUS !</a>
+        <a class="buttons" href="<?= $text_media_button_1 ?>"><?= $text_media_button_1['title'] ?></a>
     <?php endif; ?>
 </section>
 
 <!-- Jacquemin-Fanti Marie -->
-<section class="text-media-2">
-    <div class="text-media-2__content">
-        <?php if ($text_media_title_2): ?>
-            <h3 class="text-media__title"> <?= $text_media_title_2 ?> </h3>
+<section class="about-me">
+    <div class="about-me__content">
+        <?php if ($title_about_me): ?>
+            <h3 class="about-me__title"> <?= $title_about_me ?> </h3>
         <?php endif; ?>
-        <?php if ($text_media_description_2): ?>
-            <p class="text-media__text-2"> <?= $text_media_description_2 ?> </p>
+        <?php if ($description_about_me): ?>
+            <p class="about-me__text"> <?= $description_about_me ?> </p>
         <?php endif; ?>
-        <?php if ($text_media_button_2): ?>
-            <a class="buttons" href="<?= $text_media_button_2 ?>">PLUS SUR MOI !</a>
+        <?php if ($button_about_me): ?>
+            <a class="buttons" href="<?= $button_about_me ?>"><?= $button_about_me['title']?></a>
         <?php endif; ?>
     </div>
-    <?php if ($text_media_image_2): ?>
+    <?php if ($image_about_me): ?>
         <img
-                src="<?= $text_media_image_2['url'] ?>"
-                alt="<?= $text_media_image_2['alt'] ?>"
-                width="<?= $text_media_image_2['width'] ?>"
-                height="<?= $text_media_image_2['height'] ?>"
+                src="<?= $image_about_me['url'] ?>"
+                alt="<?= $image_about_me['alt'] ?>"
+                width="<?= $image_about_me['width'] ?>"
+                height="<?= $image_about_me['height'] ?>"
         >
     <?php endif; ?>
 </section>

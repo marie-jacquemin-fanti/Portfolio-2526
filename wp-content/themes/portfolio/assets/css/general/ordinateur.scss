@@ -1,0 +1,224 @@
+@media (min-width: 1200px) {
+  .navigation {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-family: var(--font-family-alberSans), sans-serif;
+    padding: 0.13rem 0.15rem;
+
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+    }
+
+    a {
+      font-weight: 300;
+      transition: 0.3s ease;
+      text-decoration: none;
+      color: white;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        height: 0.0625rem;
+        width: 100%;
+        background-color: #F63800;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover::after,
+      &:focus::after,
+      &.current-menu-item::after,
+      &.current_page_item::after {
+        transform: scaleX(1);
+      }
+
+      &:hover {
+        color: #F63800;
+      }
+    }
+  }
+
+  .navigation__link {
+
+    background-color: var(--black-color);
+    text-decoration: none;
+
+  }
+
+  //projets
+  .project {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &__container:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 12.5rem;
+      gap: 8rem;
+    }
+
+    &__title {
+      font-family: var(--font-family-alberSansLight), sans-serif;
+      font-size: 4.125rem;
+      padding-bottom: 0.625rem;
+    }
+
+    &__text {
+      font-family: var(--font-family-SegoePrint), sans-serif;
+      font-size: 1.25rem;
+      line-height: 2.188rem;
+      max-width: 37.5rem;
+    }
+
+    &__image {
+      max-width: 36.25rem;
+      height: auto;
+      border: 10px solid var(--white-color);
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+      display: block;
+      padding: -50px;
+    }
+  }
+
+  .text-media {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 13.75rem;
+  }
+
+  .text-media__text {
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1.25rem;
+    margin: 0 auto;
+    line-height: 2.188rem;
+    max-width: 37.5rem;
+  }
+
+
+  .about-me__title {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    font-size: 4.125rem;
+    padding-bottom: 0.625rem;
+  }
+
+  .about-me {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15.5rem;
+    flex-wrap: wrap;
+
+    &__content {
+      padding-right: 8.125rem;
+    }
+
+    &__text {
+      font-family: var(--font-family-SegoePrint), sans-serif;
+      font-size: 1.25rem;
+      line-height: 2.188rem;
+      max-width: 37.5rem;
+    }
+  }
+
+
+  .buttons {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    text-decoration: none;
+    border-radius: 1.563rem;
+    display: inline-block;
+    font-size: 1.25rem;
+    padding: 0.813rem 1.25rem;
+    margin: 0.625rem 0;
+  }
+
+  .stack {
+    position: relative;
+    width: 700px;
+    height: 300px;
+  }
+
+  .card {
+    position: absolute;
+    background-color: var(--white-color);
+  }
+
+
+  /* Variations (le "tas") */
+  .card-1 {
+    transform: rotate(0.45deg);
+    z-index: 3;
+  }
+
+  .card-2 {
+    transform: rotate(7.25deg);
+    z-index: 2;
+  }
+
+  .card-3 {
+    transform: rotate(-5.33deg);
+    z-index: 1;
+  }
+
+  /* Intéresser ? */
+
+
+
+
+
+
+
+
+  .education__title, .education__text {
+    color: var(--black-color);
+  }
+
+  .postit {
+    background: var(--white-color);
+    padding: 20px;
+    width: fit-content;
+    max-width: 250px;
+
+    /* petite rotation */
+    transform: rotate(-2deg);
+
+    /* effet “collé” */
+    position: relative;
+
+    font-family: 'Comic Sans MS', cursive; /* optionnel pour style */
+  }
+
+  /* petit “scotch” en haut */
+  .postit::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+
+    width: 60px;
+    height: 20px;
+
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
