@@ -44,7 +44,7 @@ $query = new WP_Query([
 
 
     <!-- Afficher tous les projets -->
-    <section class="section__project">
+    <section class="project">
     <h2 class="sro">Mes projets</h2>
 <?php if ($query->have_posts()):
     while ($query->have_posts()): $query->the_post();
@@ -53,8 +53,8 @@ $query = new WP_Query([
         $project_button = get_field('project_button');
         $project_image = get_field('project_image');
         ?>
-        <article class="projects">
-            <div class="project">
+        <article class="project__container">
+            <div class="project__content">
                 <?php if ($project_title): ?>
                     <h3 class="project__title"><?= $project_title ?></h3>
                 <?php endif; ?>
@@ -95,7 +95,6 @@ $query = new WP_Query([
                 </div>
             <?php endif; ?>
         </article>
-
     <?php endwhile; ?>
     </section>
 <?php endif; ?>
