@@ -58,5 +58,22 @@
   .interest {
     text-align: center;
     padding-top: 5rem;
+
+    &__content{
+      padding: 0 2rem;
+    }
+  }
+
+  //A propos de moi
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 9.5rem 4rem 0;
+    gap: 2rem;
+
+    &__content{
+      padding: 0 2rem;
+    }
   }
 }

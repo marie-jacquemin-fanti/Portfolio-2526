@@ -94,15 +94,17 @@ $query = new WP_Query([
 
 <!-- Intéresser ? -->
 <section class="interest">
-    <?php if ($text_media_title_1): ?>
-        <h3 class="interest__title"> <?= $text_media_title_1 ?> </h3>
-    <?php endif; ?>
-    <?php if ($text_media_description_1): ?>
-        <p class="interest__text"> <?= $text_media_description_1 ?> </p>
-    <?php endif; ?>
-    <?php if ($text_media_button_1): ?>
-        <a class="buttons" href="<?= $text_media_button_1 ?>"><?= $text_media_button_1['title'] ?></a>
-    <?php endif; ?>
+    <div class="interest__content">
+        <?php if ($text_media_title_1): ?>
+            <h3 class="interest__title"> <?= $text_media_title_1 ?> </h3>
+        <?php endif; ?>
+        <?php if ($text_media_description_1): ?>
+            <p class="interest__text"> <?= $text_media_description_1 ?> </p>
+        <?php endif; ?>
+        <?php if ($text_media_button_1): ?>
+            <a class="buttons" href="<?= $text_media_button_1 ?>"><?= $text_media_button_1['title'] ?></a>
+        <?php endif; ?>
+    </div>
 </section>
 
 <!-- Jacquemin-Fanti Marie -->
@@ -118,14 +120,16 @@ $query = new WP_Query([
             <a class="buttons" href="<?= $button_about_me ?>"><?= $button_about_me['title']?></a>
         <?php endif; ?>
     </div>
-    <?php if ($image_about_me): ?>
-        <img
-                src="<?= $image_about_me['url'] ?>"
-                alt="<?= $image_about_me['alt'] ?>"
-                width="<?= $image_about_me['width'] ?>"
-                height="<?= $image_about_me['height'] ?>"
-        >
-    <?php endif; ?>
+    <div class="about-me__content-image">
+        <?php if ($image_about_me): ?>
+            <img class="about-me__image"
+                 src="<?= $image_about_me['url'] ?>"
+                 alt="<?= $image_about_me['alt'] ?>"
+                 width="<?= $image_about_me['width'] ?>"
+                 height="<?= $image_about_me['height'] ?>"
+            >
+        <?php endif; ?>
+    </div>
 </section>
 
 <?php get_footer(); ?>

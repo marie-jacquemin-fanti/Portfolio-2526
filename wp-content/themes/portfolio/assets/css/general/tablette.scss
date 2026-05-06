@@ -1,4 +1,4 @@
-@media screen and (max-width: 1023px) and (min-width: 600px) {
+@media screen and (max-width: 1024px) and (min-width: 600px) {
   //Bouton
   .buttons {
     font-family: var(--font-family-alberSansLight), sans-serif;
@@ -31,16 +31,17 @@
     &__container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       padding-top: 9.5rem;
       gap: 2rem;
     }
-    &__content{
-     padding: 0 4rem;
+
+    &__content {
+      padding: 0 4rem;
     }
+
     &__image {
-      max-width: 36.25rem;
+      max-width: 31rem;
       height: auto;
       border: 10px solid var(--white-color);
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
@@ -60,10 +61,24 @@
   .interest {
     margin: 0 auto;
     text-align: center;
-    padding: 9.5rem 4rem;
+    padding: 9.5rem 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  //A propos de moi
+  .about-me {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 9.5rem;
+    gap: 2rem;
+
+    &__content{
+      padding: 0 6rem;
+    }
   }
+
 }
