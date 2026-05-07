@@ -2,15 +2,46 @@
 
 include ('core/theme/configuration.php');
 
-//Ajoute le support de menu, qui va aficher l'onglet dans wordpress.
-// Déclaration des menus dans wordpress
-register_nav_menu('header', 'Le menu de navigation principal'); //A le nom header
-register_nav_menu('footer', 'Le menu du footer'); //A le nom header
+
+register_nav_menu('header', 'Le menu de navigation principal');
+register_nav_menu('footer', 'Le menu de navigation du footer');
+function dw_get_navigation_links(string $location): array
+{
+    // Récupérer l'objet W¨pour le menu
+    $locations = get_nav_menu_locations();
+
+    if (!isset($locations[$location])) {
+        return [];
+    }
+
+    $nav_id = $locations[$location];
+    $nav = wp_get_nav_menu_items($nav_id);
+
+    // Transformer le menu en tableau de liens, chaque lien va être un objet personnalisé
+    $links = [];
+
+    foreach ($nav as $post) {
+        $link = new stdClass();
+        $link->href = $post->url;
+        $link->label = $post->title;
+
+        $links[] = $link;
+    }
+
+    return $links;
+}
 
 
-/*
-register_nav_menu('social-media', 'Le menu de navigation pour les réseaux sociaux');
-register_nav_menu('utils', 'Le menu de navigation pour les ressources utiles');*/
+
+
+
+
+
+
+
+
+
+
 
 
 //Custom Post Type
@@ -29,31 +60,6 @@ register_post_type('project', [ //Nom du tout
 
 
 
-// Function permettant de récupérer les éléments d'un menu de navigation sous forme de lien
-function dw_get_navigation_links(string $location): array {
-  // Récupérer l'objet W¨pour le menu
-  $locations = get_nav_menu_locations();
-
-  if (!isset($locations[$location])) {
-    return [];
-  }
-
-  $nav_id = $locations[$location];
-  $nav = wp_get_nav_menu_items($nav_id);
-
-  // Transformer le menu en tableau de liens, chaque lien va être un objet personnalisé
-  $links = [];
-
-  foreach ($nav as $post) {
-    $link = new stdClass();
-    $link->href = $post->url;
-    $link->label = $post->title;
-
-    $links[] = $link;
-  }
-
-  return $links;
-}
 
 
 // Fonction qui retourne l'URL d'un asset (css ou js) compilé par Vite
