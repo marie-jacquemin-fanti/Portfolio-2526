@@ -1,7 +1,8 @@
 :root {
   --font-family-alberSans: "AlbertSans", "Inter", "Roboto", "Helvetica Neue", Arial;
   --font-family-alberSansLight: "AlbertSansLight", "Inter", "Roboto", "Helvetica Neue", Arial;
-  --font-family-SegoePrint: "SegoePrint", "Comic Sans MS", "Bradley Hand", "Chalkboard SE", cursive;;
+  --font-family-SegoePrint: "SegoePrint", "Comic Sans MS", "Bradley Hand", "Chalkboard SE", cursive;
+  --font-family-Agbalumo: "Agbalumo", "Trebuchet MS", "Comic Sans MS", cursive;
 }
 
 @font-face {
@@ -28,3 +29,10 @@
   font-weight: 400;
 }
 
+@font-face {
+  src: url('../../fonts/Agbalumo-Regular.ttf') format('TrueType');
+  font-family: 'Agbalumo';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}

@@ -24,24 +24,23 @@ $query = new WP_Query([
 ?>
 
 
-    <!--    <h1>Nos formations --><?php //= $taxonomy ?><!--!</h1>-->
-
-    <!--<div>
-        <ul>
-            <li>
-                <a href="/project">Tout</a>
-                 TODO: à changer plus tard ^^ quand tu rajouteras les taxos -->
-<?php /*if (empty($terms->errors)): */ ?>
-<?php /*foreach ($terms as $term): */ ?>
-    <a href="/project?filter=<?php /*= $term->slug */ ?>">
-        <?php /*= $term->name; */ ?>
-    </a>
-<?php /*endforeach; */ ?>
-<?php /*endif; */ ?>
-    </li>
-    </ul>
-    </div>-->
-
+<!--    <h1>Nos formations !</h1>-->
+<!---->
+<!--    <div>-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                <a href="/project">Tout</a>-->
+<!--                TODO: à changer plus tard ^^ quand tu rajouteras les taxos-->
+<!--                --><?php //if (empty($terms->errors)): ?>
+<!--                    --><?php //foreach ($terms as $term): ?>
+<!--                        <a href="/project?filter=--><?php //= $term->slug ?><!--">-->
+<!--                            --><?php //= $term->name; ?>
+<!--                        </a>-->
+<!--                    --><?php //endforeach; ?>
+<!--                --><?php //endif; ?>
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
 
     <!-- Afficher tous les projets -->
     <section class="project">
