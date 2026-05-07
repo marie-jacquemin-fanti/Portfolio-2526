@@ -29,11 +29,13 @@ $query = new WP_Query([
 ]);
 ?>
 
-<p><?= $suptitle ?></p>
-<section>
-    <h2> <?= $title ?> </h2>
-    <p><?= $subtitle ?></p>
-</section>
+<div class="section__title">
+    <p class="suptitle"><?= $suptitle ?></p>
+    <section>
+        <h2 class="title"> <?= $title ?> </h2>
+        <p class="subtitle"><?= $subtitle ?></p>
+    </section>
+</div>
 
 <!-- Afficher tous les projets -->
 <section class="project">
@@ -117,7 +119,7 @@ $query = new WP_Query([
             <p class="about-me__text"> <?= $description_about_me ?> </p>
         <?php endif; ?>
         <?php if ($button_about_me): ?>
-            <a class="buttons" href="<?= $button_about_me ?>"><?= $button_about_me['title']?></a>
+            <a class="buttons" href="<?= $button_about_me ?>"><?= $button_about_me['title'] ?></a>
         <?php endif; ?>
     </div>
     <div class="about-me__content-image">

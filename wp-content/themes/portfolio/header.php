@@ -15,7 +15,12 @@
 <!-- Navigation principale -->
 <nav class="navigation">
     <h2 class="sro">Menu de navigation</h2>
-    <ul class="navigation__list">
+    <button class="navigation__burger" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="navigation__menu">
         <?php foreach (dw_get_navigation_links('header') as $link) : ?>
             <li class="navigation__list-item">
                 <a class="navigation__link" href="<?= $link->href ?>"><?= $link->label ?></a>
