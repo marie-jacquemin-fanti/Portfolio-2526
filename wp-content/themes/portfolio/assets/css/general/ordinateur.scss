@@ -1,6 +1,6 @@
 @media screen and (min-width: 1024px) {
- //Navigation
-  .navigation__burger{
+  //Navigation
+  .navigation__burger {
     display: none;
   }
   .navigation {
@@ -74,12 +74,11 @@
     padding: 0.813rem 1.25rem;
     margin: 0.625rem 0;
 
-    transition:
-            background-color 0.35s ease,
-            color 0.35s ease,
-            transform 0.2s ease;
+    transition: background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.2s ease;
 
-    &:hover{
+    &:hover {
       background-color: var(--orange-color);
       color: var(--white-color);
     }
@@ -191,27 +190,57 @@
     }
   }
 
+  //Buison de compétance
+  .skill-bush {
+    display: flex;
+    justify-content: center;
+    padding-top: 9.5rem;
 
-  .education__title, .education__text {
-    color: var(--black-color);
+    &__image {
+      max-width: 70rem;
+    }
   }
 
+  //Parcours scolaire
+  .education {
+    &__content {
+      display: flex;
+      justify-content: center;
+      padding-top: 9.5rem;
+      gap:5rem;
+    }
+    &__content:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    &__image {
+      transform: rotate(3deg);
+      max-width: 40rem;
+      height: auto;
+    }
+    &__title{
+      color: var(--black-color);
+      font-weight: bold;
+    }
+    &__text {
+      color: var(--black-color);
+      line-height: 1.2rem;
+    }
+  }
   .postit {
-    background: var(--white-color);
+    left: 55rem;
+    top: 97rem;
+    max-height: 6rem;
+    background: var(--gre-color);
     padding: 20px;
     width: fit-content;
     max-width: 250px;
-
-    /* petite rotation */
     transform: rotate(-2deg);
 
-    /* effet “collé” */
-    position: relative;
+    font-family: var(--font-family-SegoePrint), sans-serif; /* optionnel pour style */
 
-    font-family: 'Comic Sans MS', cursive; /* optionnel pour style */
   }
 
-  /* petit “scotch” en haut */
   .postit::before {
     content: "";
     position: absolute;
