@@ -1,6 +1,19 @@
 <?php
 
-include ('core/theme/configuration.php');
+use controllers\ContactForm;
+
+include('core/theme/configuration.php');
+include('core/controllers/ContactForm.php');
+
+//Travailler avec la session de PHP
+function hepl_session_flash($key, $value): void
+{
+    if (!isset($_SESSION['hepl_flash'])) {
+        $_SESSION['hepl_flash'] = [];
+    }
+
+    $_SESSION['hepl_flash'][$key] = $value;
+}
 
 
 register_nav_menu('header', 'Le menu de navigation principal');
@@ -32,18 +45,6 @@ function dw_get_navigation_links(string $location): array
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //Custom Post Type
 register_post_type('project', [ //Nom du tout
     'label' => 'Projects',
@@ -57,10 +58,6 @@ register_post_type('project', [ //Nom du tout
     'rewrite' => ['slug' => 'projets'],
     'supports' => ['title'],
 ]);
-
-
-
-
 
 // Fonction qui retourne l'URL d'un asset (css ou js) compilé par Vite
 function dw_asset(string $file): string {
@@ -97,6 +94,61 @@ function dw_asset(string $file): string {
   return '';
 }
 
+//Formulaire de contact
+//La fonction va s'executer quand quelqu'un va appuyer sur le bouton de soumision de formulaire. Il va analyser et traiter les information envoyer grâce à ça.
+function execute_contact_form(): void
+{
+    //On configure
+    $config = [
+        // On va récupérer le name d'un nonce (jeton de sécurité) que nous avons créé dans le template du formulaire.
+        'nonce_field' => 'contact_nonce', //Un jeton qui rpouve que ça vien bien de notre site
+        // On va récupérer l'action du formulaire qui contient le nonce.
+        'nonce_identifier' => 'hepl_contact_form', //TODO : Je ne comprend pas ce que c'est.
+    ];
+
+    //On créer un objet avec deux paramettres (les informations de sécuriter juste au dessus et les données du formulaire)
+    (new ContactForm($config, $_POST))
+        //On nettoie les données et retire tout ce qui peut être dangereux à l'intérieur.
+        ->sanitize([
+            'name' => 'text_field',
+            'email' => 'email',
+            'object' => 'text_field',
+            'message' => 'textarea_field'
+        ])
+        //On les valides
+        ->validate([
+            'name' => ['required'],
+            'email' => ['email', 'required'],
+            'object' => [],
+            'message' => ['required']
+        ])
+        //On sauvegarde le tout dans wordpress, pour que l'on puisse lire ce qui nous a été envoyer.
+        ->save(
+        // Dylan Jacquet - dylan.jacquet@hepl.be - Objet du message
+            title: fn($data) => $data['name'] . ' - ' . $data['email'] . ' - ' . $data['object'],
+            content: fn($data) => $data['message'],
+        )
+        //Envoie un mail sur mon mail personnel en plus de wordpress qui garde une copie.
+        ->send(
+            title: fn($data) => 'Nouveau message de ' . $data['name'],
+            content: fn($data
+            ) => 'Nom complet: ' . $data['name'] . PHP_EOL . 'Adresse mail: ' . $data['email'] . PHP_EOL . 'Objet:' . $data['object'] . PHP_EOL . 'Message:' . $data['message'],
+        )
+        //On redirige la personne après l'envoyer, pour lui dire que ça à bien fonctionner.
+        ->feedback();
+}
+
+
+
+
+
+
+
+
+
+
+
+
 add_image_size('square-small', 600, 400, true); //TODO : Revoir !
 
 
@@ -110,10 +162,5 @@ add_image_size('square-small', 600, 400, true); //TODO : Revoir !
     'redirect' => false
 ));*/
 
-//SVG
-function autoriser_svg_upload($mimes) {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
-}
-add_filter('upload_mimes', 'autoriser_svg_upload');
+
 
