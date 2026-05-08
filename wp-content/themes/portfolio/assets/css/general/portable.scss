@@ -213,6 +213,7 @@
   .about-me {
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: 9.5rem 0 0;
     gap: 2rem;
@@ -221,7 +222,66 @@
       padding: 0 2rem;
     }
   }
+  //Buison de compétance
+  .skill-bush {
+    display: flex;
+    justify-content: center;
+    padding-top: 9.5rem;
 
+    &__image {
+      max-width: 25rem;
+    }
+  }
+  //Parcours scolaire
+  .education {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 9.5rem;
+      gap:2rem;
+    }
+
+    &__image {
+      transform: rotate(3deg);
+      max-width: 25rem;
+      height: auto;
+
+    }
+    &__title{
+      color: var(--black-color);
+      font-weight: bold;
+    }
+    &__text {
+      color: var(--black-color);
+      line-height: 1.2rem;
+    }
+  }
+  .postit {
+    left: 55rem;
+    top: 97rem;
+    max-height: 6rem;
+    background: var(--gre-color);
+    padding: 20px;
+    width: fit-content;
+    max-width: 250px;
+    transform: rotate(-2deg);
+
+    font-family: var(--font-family-SegoePrint), sans-serif; /* optionnel pour style */
+  }
+  .postit::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+
+    width: 60px;
+    height: 20px;
+
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
   //footer
   .footer {
     &__image {

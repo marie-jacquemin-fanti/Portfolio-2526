@@ -51,9 +51,9 @@ $text_education_5 = get_field('text_education_5');
 </section>
 
 <!-- Buisson de compétence -->
-<section>
+<section class="skill-bush">
     <h2 class="sro">Buisson de compétence</h2>
-    <img src="<?= $skill_bush['url'] ?>"
+    <img class="skill-bush__image" src="<?= $skill_bush['url'] ?>"
          alt="<?= $skill_bush['alt'] ?>"
     >
 </section>
