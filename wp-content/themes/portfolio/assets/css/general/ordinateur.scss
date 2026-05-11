@@ -207,8 +207,9 @@
       display: flex;
       justify-content: center;
       padding-top: 9.5rem;
-      gap:5rem;
+      gap: 5rem;
     }
+
     &__content:nth-child(odd) {
       flex-direction: row-reverse;
     }
@@ -218,10 +219,12 @@
       max-width: 40rem;
       height: auto;
     }
-    &__title{
+
+    &__title {
       color: var(--black-color);
       font-weight: bold;
     }
+
     &__text {
       color: var(--black-color);
       line-height: 1.2rem;
@@ -255,6 +258,50 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
+
+  //Formulaire de contact
+  .form__container {
+    display: flex;
+    justify-content: center;
+  }
+  .form {
+    padding: 3rem;
+    border: 1px solid var(--white-color);
+    min-width: 72%;
+    margin: 0 auto;
+    &__group{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  label{
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1.125rem;
+    padding-top: 2rem;
+  }
+  input, textarea{
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    color: var(--gre2-color);
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    appearance: none;
+    border: none;
+  }
+  input:focus, textarea:focus{
+    outline: none;
+    border: 2px solid inside var(--orange-color);
+    background-color: var(--saumon-color);
+    color: var(--white-color);
+  }
+  input:focus::placeholder, textarea:focus::placeholder{
+    color: var(--gre-color);
+  }
+  button[type="submit"] {
+      border: none;
+    margin-top: 2rem;
+
+  }
 
   //footer
   .footer {

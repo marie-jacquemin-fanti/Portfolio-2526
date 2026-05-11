@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= get_the_title() ?></title>
     <link rel="stylesheet" type="text/css" href="<?= dw_asset('css'); ?>">
-    <script src="<?= dw_asset('js') ?>" defer></script>
+    <script defer src="<?= dw_asset('js') ?>" ></script>
 </head>
 
 
