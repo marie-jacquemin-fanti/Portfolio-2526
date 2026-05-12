@@ -48,25 +48,26 @@ function execute_contact_form(): void
         ->sanitize([
             'name' => 'text_field',
             'email' => 'email',
-            'phone' => 'tel',
+            'phone' => 'text_field',
             'sujet' => 'text_field',
             'message' => 'textarea_field'
         ])
         ->validate([
             'name' => ['required'],
             'email' => ['email', 'required'],
-            'object' => [],
+            'phone' => ['required'],
+            'sujet' => [],
             'message' => ['required']
         ])
         ->save(
         // Dylan Jacquet - dylan.jacquet@hepl.be - Objet du message
-            title: fn($data) => $data['name'] . ' - ' . $data['email'] . ' - ' . $data['object'],
+            title: fn($data) => $data['name'] . ' - ' . $data['email'] . ' - ' . $data['sujet'],
             content: fn($data) => $data['message'],
         )
         ->send(
             title: fn($data) => 'Nouveau message de ' . $data['name'],
             content: fn($data
-            ) => 'Nom complet: ' . $data['name'] . PHP_EOL . 'Adresse mail: ' . $data['email'] . PHP_EOL . 'Objet:' . $data['object'] . PHP_EOL . 'Message:' . $data['message'],
+            ) => 'Nom complet: ' . $data['name'] . PHP_EOL . 'Adresse mail: ' . $data['email'] . PHP_EOL . 'Objet:' . $data['sujet'] . PHP_EOL . 'Message:' . $data['message'],
         )
         ->feedback();
 }
@@ -76,7 +77,7 @@ register_post_type('message', [
     'label' => 'Messages de contact',
     'description' => 'Les messages de contact',
     'menu_position' => 2,
-    'menu_icon' => 'dashicons-welcome-learn-more',
+    'menu_icon' => 'dashicons-buddicons-pm',
     'public' => false,
     'show_ui' => true,
     //à mettre s'il est en public false, mais qu'on veut le voir dans le back-office
@@ -146,20 +147,6 @@ function dw_asset(string $file): string
 
 add_theme_support('post-thumbnails', ['training']);
 
-register_post_type('training', [
-    'label' => 'Formations',
-    'description' => 'Les formations présentes sur mon site web',
-    'menu_position' => 2,
-    'menu_icon' => 'dashicons-welcome-learn-more',
-    'public' => true,
-    'has_archive' => true,
-    'rewrite' => [
-        'slug' => 'formations',
-    ],
-    'supports' => ['title', 'excerpt', 'thumbnail'],
-]);
-
-
 register_taxonomy('training_level', ['training'], [
     'label' => 'Le niveau de la formation',
     'public' => true,
@@ -191,7 +178,7 @@ register_post_type('project', [ //Nom du tout
     'label' => 'Projects',
     'description' => 'Les projets que j’ai fait',
     'menu_position' => 2,
-    'menu_icon' => 'dashicons-welcome-learn-more',
+    'menu_icon' => 'dashicons-portfolio',
     'public' => true, //Pour que tout le monde le voie
     'show_ui' => true,
     //à mettre s'il est en public false, mais qu'on veut le voir dans le back-office
@@ -199,3 +186,11 @@ register_post_type('project', [ //Nom du tout
     'rewrite' => ['slug' => 'projets'],
     'supports' => ['title'],
 ]);
+
+
+//SVG
+function my_own_mime_types( $mimes ) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'my_own_mime_types' );
