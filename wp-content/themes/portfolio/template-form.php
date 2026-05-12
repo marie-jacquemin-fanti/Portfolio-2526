@@ -2,8 +2,8 @@
 
 <?= get_header(); ?>
 
-<?php get_template_part('templates/components/stage/stage'); ?>
 <?php get_template_part('templates/components/forms/me-contacter'); ?>
+<?php get_template_part('templates/components/forms/en/contact'); ?>
 
 
 <section class="form__container">
@@ -50,15 +50,15 @@
             <label class="form__label" for="phone">Numéro de téléphone *</label>
             <input class="form__input" type="tel" id="phone" name="phone" value="" placeholder="Ex: +33 6 12 48 75 95" required/>
             <?php if ($errors['phone'] ?? null): ?>
-                <p class="form__error-message"><?= $errors['email']; ?></p>
+                <p class="form__error-message"><?= $errors['phone']; ?></p>
             <?php endif; ?>
         </div>
 
         <div class="form__group">
-            <label class="form__label" for="object">Sujet</label>
-            <input class="form__input" type="text" id="object" name="object" value="" placeholder="Ex: Prise de rendez-vous"/>
+            <label class="form__label" for="sujet">Sujet</label>
+            <input class="form__input" type="text" id="sujet" name="sujet" value="" placeholder="Ex: Prise de rendez-vous"/>
             <?php if ($errors['sujet'] ?? null): ?>
-                <p class="form__error-message"><?= $errors['object']; ?></p>
+                <p class="form__error-message"><?= $errors['sujet']; ?></p>
             <?php endif; ?>
         </div>
 

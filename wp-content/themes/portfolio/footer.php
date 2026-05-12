@@ -15,8 +15,8 @@ $logo = get_field('logo');
 <!-- Afficher la navigation du footer -->
 <footer class="footer">
     <div class="footer__container">
-        <img class="footer__image" src="<?= $logo['url'] ?>"
-             alt="<?= $logo['alt'] ?>"
+        <img class="footer__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/litle-me.svg"
+             alt=""
         >
         <!-- Navigation -->
         <nav class="footer__nav" aria-labelledby="  footer-nav-title">
@@ -36,25 +36,17 @@ $logo = get_field('logo');
             <address class="footer__address">
                 <ul class="footer__contact-list">
                     <li class="footer__item">
-                        <?php if (!empty($number_phone)): ?>
-                            <a href="<?= $number_phone['url'] ?>" class="footer__link"><?= $number_phone['title'] ?></a>
-                        <?php endif; ?>
+                            <a href="tel:+33619997118" class="footer__link">+33 6 19 99 71 18</a>
                     </li>
                     <li class="footer__item">
-                        <?php if (!empty($email)): ?>
                             <a href="mailto:<?= antispambot($email); ?>"
-                               class="footer__link"><?= antispambot($email); ?></a>
-                        <?php endif; ?>
+                               class="footer__link">mariejacqueminfanti@gmail.com</a>
                     </li>
                     <li class="footer__item">
-                        <?php if (!empty($linkedin)): ?>
-                            <a href="<?= $linkedin['url'] ?>" class="footer__link"><?= $linkedin['title'] ?></a>
-                        <?php endif; ?>
+                            <a href="https://www.linkedin.com/in/marie-jacquemin-fanti-408466250/" class="footer__link">Linkedin</a>
                     </li>
                     <li class="footer__item">
-                        <?php if (!empty($github)): ?>
-                            <a href="<?= $github['url'] ?>" class="footer__link"><?= $github['title'] ?></a>
-                        <?php endif; ?>
+                            <a href="https://github.com/marie-jacquemin-fanti" class="footer__link">GitHub</a>
                     </li>
                 </ul>
             </address>
