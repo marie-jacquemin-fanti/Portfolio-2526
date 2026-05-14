@@ -104,7 +104,7 @@ $query = new WP_Query([
             <p class="interest__text"> <?= $text_media_description_1 ?> </p>
         <?php endif; ?>
         <?php if ($text_media_button_1): ?>
-            <a class="buttons" href="<?= $text_media_button_1 ?>"><?= $text_media_button_1['title'] ?></a>
+            <a class="buttons" href="<?= $text_media_button_1['url'] ?>"><?= $text_media_button_1['title'] ?></a>
         <?php endif; ?>
     </div>
 </section>
@@ -119,7 +119,7 @@ $query = new WP_Query([
             <p class="about-me__text"> <?= $description_about_me ?> </p>
         <?php endif; ?>
         <?php if ($button_about_me): ?>
-            <a class="buttons" href="<?= $button_about_me ?>"><?= $button_about_me['title'] ?></a>
+            <a class="buttons" href="<?= $button_about_me['url'] ?>"><?= $button_about_me['title'] ?></a>
         <?php endif; ?>
     </div>
     <div class="about-me__content-image">

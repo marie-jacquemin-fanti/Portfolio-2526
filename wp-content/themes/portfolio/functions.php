@@ -145,14 +145,6 @@ function dw_asset(string $file): string
     return '';
 }
 
-add_theme_support('post-thumbnails', ['training']);
-
-register_taxonomy('training_level', ['training'], [
-    'label' => 'Le niveau de la formation',
-    'public' => true,
-    'hierarchical' => true,
-]);
-
 acf_add_options_page(array(
     'page_title' => 'Theme General Settings',
     'menu_title' => 'Theme Settings',
