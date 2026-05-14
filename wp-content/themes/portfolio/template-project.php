@@ -1,51 +1,21 @@
+<?php /* Template Name: project */ ?>
 <?php get_header(); ?>
+
 <?php
-$terms = get_terms('project_type');
-$taxonomy = isset($_GET['filter']) ? sanitize_text_field($_GET['filter']) : '';
 
+//Une boucle personnaliser qui va faire apparaitre les projets de nos CPT.
 $query = new WP_Query([
-    'post_type' => 'project', //Dans function.php, le nom donnée au tout
+    'post_type' => 'project', //Dans function.php, le nom donné au tout
     'post_status' => 'publish',
-    'posts_per_page' => 3, //Le nombre que l'on veut afficher.
+    'posts_per_page' => 100, //Le nombre que l'on veut afficher.
 ]);
-
-
-/*if ($taxonomy !== '') {
-    $args['tax_query'] = [
-        [
-            'taxonomy' => 'project_type',
-            'field' => 'slug',
-            'terms' => $taxonomy,
-        ]
-    ];
-}*/
-
-
 ?>
 
 
-<!--    <h1>Nos formations !</h1>-->
-<!---->
-<!--    <div>-->
-<!--        <ul>-->
-<!--            <li>-->
-<!--                <a href="/project">Tout</a>-->
-<!--                TODO: à changer plus tard ^^ quand tu rajouteras les taxos-->
-<!--                --><?php //if (empty($terms->errors)): ?>
-<!--                    --><?php //foreach ($terms as $term): ?>
-<!--                        <a href="/project?filter=--><?php //= $term->slug ?><!--">-->
-<!--                            --><?php //= $term->name; ?>
-<!--                        </a>-->
-<!--                    --><?php //endforeach; ?>
-<!--                --><?php //endif; ?>
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-
-    <!-- Afficher tous les projets -->
-    <section class="project">
+<!-- Afficher tous les projets -->
+<section class="project">
     <h2 class="sro">Mes projets</h2>
-<?php if ($query->have_posts()):
+    <?php if ($query->have_posts()):
     while ($query->have_posts()): $query->the_post();
         $project_title = get_field('project_title');
         $project_description = get_field('project_description');
@@ -61,7 +31,8 @@ $query = new WP_Query([
                     <p class="project__text"><?= $project_description ?></p>
                 <?php endif; ?>
                 <a class="buttons" href="<?= get_the_permalink() ?>"
-                   title="Lien vers mon projet : <?= get_the_title() ?>">EN SAVOIR PLUS !</a>
+                   title="Lien vers mon projet : <?= get_the_title() ?>"
+                   >EN SAVOIR PLUS !</a>
             </div>
 
             <?php if ($project_image): ?>
@@ -94,7 +65,9 @@ $query = new WP_Query([
             <?php endif; ?>
         </article>
     <?php endwhile; ?>
-    </section>
+</section>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
+
 <?php get_footer(); ?>
+
