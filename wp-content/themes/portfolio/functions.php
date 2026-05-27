@@ -60,7 +60,6 @@ function execute_contact_form(): void
             'message' => ['required']
         ])
         ->save(
-        // Dylan Jacquet - dylan.jacquet@hepl.be - Objet du message
             title: fn($data) => $data['name'] . ' - ' . $data['email'] . ' - ' . $data['sujet'],
             content: fn($data) => $data['message'],
         )
@@ -72,7 +71,6 @@ function execute_contact_form(): void
         ->feedback();
 }
 
-// Déclaration d'un CPT (Custom Post Type) "Message" pour les messages de contact
 register_post_type('message', [
     'label' => 'Messages de contact',
     'description' => 'Les messages de contact',

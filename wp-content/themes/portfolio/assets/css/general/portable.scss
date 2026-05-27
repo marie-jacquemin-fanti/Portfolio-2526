@@ -158,13 +158,13 @@
     padding-top: 1rem;
   }
   //Titre
-  .project__title, .interest__title, .about-me__title {
+  .project__title, .interest__title, .about-me__title, .project-section__title {
     font-family: var(--font-family-alberSansLight), sans-serif;
     font-size: 3.125rem;
     padding-bottom: 0.625rem;
   }
   //Texte
-  .project__text, .interest__text, .about-me__text {
+  .project__text, .interest__text, .about-me__text, .project-section__text{
     font-family: var(--font-family-SegoePrint), sans-serif;
     font-size: 1rem;
     line-height: 2.188rem;
@@ -400,6 +400,37 @@
       > a:hover {
         color: var(--orange-color);
       }
+    }
+  }
+  //Un seul projet
+  .project-section {
+    &__container {
+      padding-top: 9.5rem;
+      gap: 2rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__content {
+      padding: 0 5.5rem;
+    }
+
+    &__image {
+      max-width: 20rem;
+      height: auto;
+      border: 10px solid var(--white-color);
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
+      display: block;
+      padding: -50px;
+    }
+    &__image-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
     }
   }
 }
