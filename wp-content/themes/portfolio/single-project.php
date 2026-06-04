@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
+<?php if (have_posts()): while (have_posts()):
+    the_post(); ?>
 
     <?php
     $project_description = get_field('project_description');
@@ -35,49 +36,50 @@
     $rendering_image_2 = get_field('rendering_image_2');
     $rendering_image_3 = get_field('rendering_image_3');
     ?>
+    <article itemscope itemtype="https://schema.org/CreativeWork">
+        <h1 class="title_page" itemprop="name"><?= get_the_title() ?></h1>
 
-    <h1><?= get_the_title() ?></h1>
-
-    <?php if ($project_description): ?>
-        <p><?= get_field($project_description) ?></p>
-    <?php endif; ?>
+        <?php if ($project_description): ?>
+            <p itemprop="description"><?= get_field($project_description) ?></p>
+        <?php endif; ?>
 
 
-    <div class="project-section">
-        <div class="project-section__container">
-            <div class="project-section__content">
-                <?php if ($process_title): ?>
-                    <h3 class="project-section__title"><?= $process_title ?></h3>
-                <?php endif; ?>
-                <?php if ($process_description): ?>
-                    <p class="project-section__text"><?= $process_description ?></p>
-                <?php endif; ?>
-            </div>
+        <div class="project-section">
+            <div class="project-section__container">
+                <div class="project-section__content">
+                    <?php if ($process_title): ?>
+                        <h3 class="project-section__title"><?= $process_title ?></h3>
+                    <?php endif; ?>
+                    <?php if ($process_description): ?>
+                        <p class="project-section__text"><?= $process_description ?></p>
+                    <?php endif; ?>
+                </div>
 
-            <div class="project-section__image-container">
-                <?php if ($process_image_1): ?>
+                <div class="project-section__image-container">
+                    <?php if ($process_image_1): ?>
 
-                    <img class="project-section__image"
-                         src="<?= $process_image_1['url'] ?>"
-                         alt="<?= $process_image_1['alt'] ?>"
-                         width="<?= $process_image_1['width'] ?>"
-                         height="<?= $process_image_1['height'] ?>"
-                    >
+                        <img class="project-section__image"
+                             src="<?= $process_image_1['url'] ?>"
+                             alt="<?= $process_image_1['alt'] ?>"
+                             width="<?= $process_image_1['width'] ?>"
+                             height="<?= $process_image_1['height'] ?>"
+                             itemprop="image"
+                        >
 
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <?php if ($process_image_2): ?>
+                    <?php if ($process_image_2): ?>
 
-                    <img class="project-section__image"
-                         src="<?= $process_image_2['url'] ?>"
-                         alt="<?= $process_image_2['alt'] ?>"
-                         width="<?= $process_image_2['width'] ?>"
-                         height="<?= $process_image_2['height'] ?>"
-                    >
+                        <img class="project-section__image"
+                             src="<?= $process_image_2['url'] ?>"
+                             alt="<?= $process_image_2['alt'] ?>"
+                             width="<?= $process_image_2['width'] ?>"
+                             height="<?= $process_image_2['height'] ?>"
+                        >
 
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <?php if ($process_image_3): ?>
+                    <?php if ($process_image_3): ?>
 
                         <img class="project-section__image"
                              src="<?= $process_image_3['url'] ?>"
@@ -86,21 +88,21 @@
                              height="<?= $process_image_3['height'] ?>"
                         >
 
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
 
-        <div class="project-section__container">
-            <div class="project-section__content">
-                <?php if ($my_inspiration_title): ?>
-                    <h3 class="project-section__title"><?= $my_inspiration_title ?></h3>
-                <?php endif; ?>
-                <?php if ($my_inspiration_description): ?>
-                    <p class="project-section__text"><?= $my_inspiration_description ?></p>
-                <?php endif; ?>
-            </div>
-            <div class="project-section__image-container">
-                <?php if ($my_inspiration_image_1): ?>
+            <div class="project-section__container">
+                <div class="project-section__content">
+                    <?php if ($my_inspiration_title): ?>
+                        <h3 class="project-section__title"><?= $my_inspiration_title ?></h3>
+                    <?php endif; ?>
+                    <?php if ($my_inspiration_description): ?>
+                        <p class="project-section__text"><?= $my_inspiration_description ?></p>
+                    <?php endif; ?>
+                </div>
+                <div class="project-section__image-container">
+                    <?php if ($my_inspiration_image_1): ?>
 
                         <img class="project-section__image"
                              src="<?= $my_inspiration_image_1['url'] ?>"
@@ -108,132 +110,132 @@
                              width="<?= $my_inspiration_image_1['width'] ?>"
                              height="<?= $my_inspiration_image_1['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($my_inspiration_image_2): ?>
+                    <?php endif; ?>
+                    <?php if ($my_inspiration_image_2): ?>
                         <img class="project-section__image"
                              src="<?= $my_inspiration_image_2['url'] ?>"
                              alt="<?= $my_inspiration_image_2['alt'] ?>"
                              width="<?= $my_inspiration_image_2['width'] ?>"
                              height="<?= $my_inspiration_image_2['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($my_inspiration_image_3): ?>
+                    <?php endif; ?>
+                    <?php if ($my_inspiration_image_3): ?>
                         <img class="project-section__image"
                              src="<?= $my_inspiration_image_3['url'] ?>"
                              alt="<?= $my_inspiration_image_3['alt'] ?>"
                              width="<?= $my_inspiration_image_3['width'] ?>"
                              height="<?= $my_inspiration_image_3['height'] ?>"
                         >
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
 
-        <div class="project-section__container">
-            <div class="project-section__content">
-                <?php if ($my_design_title): ?>
-                    <h3 class="project-section__title" class="project-section__title"><?= $my_design_title ?></h3>
-                <?php endif; ?>
-                <?php if ($my_design_description): ?>
-                    <p class="project-section__text"><?= $my_design_description ?></p>
-                <?php endif; ?>
-            </div>
-            <div class="project-section__image-container">
-                <?php if ($my_design_image_1): ?>
+            <div class="project-section__container">
+                <div class="project-section__content">
+                    <?php if ($my_design_title): ?>
+                        <h3 class="project-section__title" class="project-section__title"><?= $my_design_title ?></h3>
+                    <?php endif; ?>
+                    <?php if ($my_design_description): ?>
+                        <p class="project-section__text"><?= $my_design_description ?></p>
+                    <?php endif; ?>
+                </div>
+                <div class="project-section__image-container">
+                    <?php if ($my_design_image_1): ?>
                         <img class="project-section__image"
                              src="<?= $my_design_image_1['url'] ?>"
                              alt="<?= $my_design_image_1['alt'] ?>"
                              width="<?= $my_design_image_1['width'] ?>"
                              height="<?= $my_design_image_1['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($my_design_image_2): ?>
+                    <?php endif; ?>
+                    <?php if ($my_design_image_2): ?>
                         <img class="project-section__image"
                              src="<?= $my_design_image_2['url'] ?>"
                              alt="<?= $my_design_image_2['alt'] ?>"
                              width="<?= $my_design_image_2['width'] ?>"
                              height="<?= $my_design_image_2['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($my_design_image_3): ?>
+                    <?php endif; ?>
+                    <?php if ($my_design_image_3): ?>
                         <img class="project-section__image"
                              src="<?= $my_design_image_3['url'] ?>"
                              alt="<?= $my_design_image_3['alt'] ?>"
                              width="<?= $my_design_image_3['width'] ?>"
                              height="<?= $my_design_image_3['height'] ?>"
                         >
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
-        <div class="project-section__container">
-            <div class="project-section__content">
-                <?php if ($realisation_title): ?>
-                    <h3 class="project-section__title"><?= $realisation_title ?></h3>
-                <?php endif; ?>
-                <p class="project-section__text"><?= $realisation_description ?></p>
-            </div>
-            <div class="project-section__image-container">
-                <?php if ($realisation_image_1): ?>
+            <div class="project-section__container">
+                <div class="project-section__content">
+                    <?php if ($realisation_title): ?>
+                        <h3 class="project-section__title"><?= $realisation_title ?></h3>
+                    <?php endif; ?>
+                    <p class="project-section__text"><?= $realisation_description ?></p>
+                </div>
+                <div class="project-section__image-container">
+                    <?php if ($realisation_image_1): ?>
                         <img class="project-section__image"
                              src="<?= $realisation_image_1['url'] ?>"
                              alt="<?= $realisation_image_1['alt'] ?>"
                              width="<?= $realisation_image_1['width'] ?>"
                              height="<?= $realisation_image_1['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($realisation_image_2): ?>
+                    <?php endif; ?>
+                    <?php if ($realisation_image_2): ?>
                         <img class="project-section__image"
                              src="<?= $realisation_image_2['url'] ?>"
                              alt="<?= $realisation_image_2['alt'] ?>"
                              width="<?= $realisation_image_2['width'] ?>"
                              height="<?= $realisation_image_2['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($realisation_image_3): ?>
+                    <?php endif; ?>
+                    <?php if ($realisation_image_3): ?>
                         <img class="project-section__image"
                              src="<?= $realisation_image_3['url'] ?>"
                              alt="<?= $realisation_image_3['alt'] ?>"
                              width="<?= $realisation_image_3['width'] ?>"
                              height="<?= $realisation_image_3['height'] ?>"
                         >
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
-        <div class="project-section__container">
-            <div class="project-section__content">
-                <?php if ($rendering_title): ?>
-                    <h3 class="project-section__title"><?= $rendering_title ?></h3>
-                <?php endif; ?>
-                <p class="project-section__text"><?= $rendering_description ?></p>
-            </div>
-            <div class="project-section__image-container">
-                <?php if ($rendering_image_1): ?>
+            <div class="project-section__container">
+                <div class="project-section__content">
+                    <?php if ($rendering_title): ?>
+                        <h3 class="project-section__title"><?= $rendering_title ?></h3>
+                    <?php endif; ?>
+                    <p class="project-section__text"><?= $rendering_description ?></p>
+                </div>
+                <div class="project-section__image-container">
+                    <?php if ($rendering_image_1): ?>
                         <img class="project-section__image"
                              src="<?= $rendering_image_1['url'] ?>"
                              alt="<?= $rendering_image_1['alt'] ?>"
                              width="<?= $rendering_image_1['width'] ?>"
                              height="<?= $rendering_image_1['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($rendering_image_2): ?>
+                    <?php endif; ?>
+                    <?php if ($rendering_image_2): ?>
                         <img class="project-section__image"
                              src="<?= $rendering_image_2['url'] ?>"
                              alt="<?= $rendering_image_2['alt'] ?>"
                              width="<?= $rendering_image_2['width'] ?>"
                              height="<?= $rendering_image_2['height'] ?>"
                         >
-                <?php endif; ?>
-                <?php if ($rendering_image_3): ?>
+                    <?php endif; ?>
+                    <?php if ($rendering_image_3): ?>
                         <img class="project-section__image"
                              src="<?= $rendering_image_3['url'] ?>"
                              alt="<?= $rendering_image_3['alt'] ?>"
                              width="<?= $rendering_image_3['width'] ?>"
                              height="<?= $rendering_image_3['height'] ?>"
                         >
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
-
+    </article>
 <?php endwhile; else: ?>
     <p class="project-section__text"><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 <?php endif; ?>

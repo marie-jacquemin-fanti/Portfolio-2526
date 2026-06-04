@@ -177,10 +177,25 @@ register_post_type('project', [ //Nom du tout
     'supports' => ['title'],
 ]);
 
+function register_project_taxonomies() {
+    register_taxonomy(
+        'project_category',
+        'project',
+        [
+            'label'        => 'Catégories de projets',
+            'hierarchical' => true,
+            'rewrite'      => ['slug' => 'project-category'],
+            'show_in_rest' => true,
+        ]
+    );
+}
+add_action('init', 'register_project_taxonomies');
 
 //SVG
-function my_own_mime_types( $mimes ) {
+function my_own_mime_types($mimes)
+{
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
-add_filter( 'upload_mimes', 'my_own_mime_types' );
+
+add_filter('upload_mimes', 'my_own_mime_types');

@@ -36,4 +36,36 @@ body {
   z-index: 1;
 }
 
+@media screen and (min-width: 1024px) {
+  .title_page{
+    font-family: var(--font-family-Agbalumo), sans-serif;
+    font-size: 5rem;
+    font-weight: lighter;
 
+    display: flex;
+    justify-content: center;
+    margin: 8rem 0 4rem;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+  .title_page{
+    font-family: var(--font-family-Agbalumo), sans-serif;
+    font-size: 4rem;
+    font-weight: lighter;
+
+    display: flex;
+    justify-content: center;
+    margin: 8rem 0 4rem;
+  }
+}
+@media (max-width: 600px) {
+  .title_page{
+    font-family: var(--font-family-Agbalumo), sans-serif;
+    font-size: 3rem;
+    font-weight: lighter;
+
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 0;
+  }
+}
