@@ -2,6 +2,8 @@
 <?php get_header(); ?>
 
 <?php
+$header = get_field('header');
+
 //Texte média 2
 $title_about_me = get_field('title_about_me');
 $description_about_me = get_field('description_about_me');
@@ -29,106 +31,119 @@ $image_education_5 = get_field('image_education_5');
 $title_education_5 = get_field('title_education_5');
 $text_education_5 = get_field('text_education_5');
 ?>
-
-<!-- Jacquemin-Fanti Marie -->
-<section class="about-me">
-    <div class="about-me__content">
-        <?php if ($title_about_me): ?>
-            <h3 class="about-me__title"> <?= $title_about_me ?> </h3>
+<main itemscope itemtype="https://schema.org/AboutPage">
+    <h1 class="title_page"><?= $header ?></h1>
+    <!-- Jacquemin-Fanti Marie -->
+    <section class="about-me" itemscope itemtype="https://schema.org/Person">
+        <div class="about-me__content">
+            <?php if ($title_about_me): ?>
+                <h3 class="about-me__title" itemprop="jobTitle"> <?= $title_about_me ?> </h3>
+            <?php endif; ?>
+            <?php if ($description_about_me): ?>
+                <p class="about-me__text" itemprop="description"> <?= $description_about_me ?> </p>
+            <?php endif; ?>
+        </div>
+        <?php if ($image_about_me): ?>
+            <img
+                    src="<?= $image_about_me['url'] ?>"
+                    alt="<?= $image_about_me['alt'] ?>"
+                    width="<?= $image_about_me['width'] ?>"
+                    height="<?= $image_about_me['height'] ?>"
+                    itemprop="image"
+            >
         <?php endif; ?>
-        <?php if ($description_about_me): ?>
-            <p class="about-me__text"> <?= $description_about_me ?> </p>
-        <?php endif; ?>
-    </div>
-    <?php if ($image_about_me): ?>
-        <img
-                src="<?= $image_about_me['url'] ?>"
-                alt="<?= $image_about_me['alt'] ?>"
-                width="<?= $image_about_me['width'] ?>"
-                height="<?= $image_about_me['height'] ?>"
+    </section>
+
+    <!-- Buisson de compétence -->
+    <section class="skill-bush" itemscope itemtype="https://schema.org/ItemList">
+        <h2 class="sro">Buisson de compétence</h2>
+        <img class="skill-bush__image" src="<?= $skill_bush['url'] ?>"
+             alt="<?= $skill_bush['alt'] ?>"
         >
-    <?php endif; ?>
-</section>
+    </section>
 
-<!-- Buisson de compétence -->
-<section class="skill-bush">
-    <h2 class="sro">Buisson de compétence</h2>
-    <img class="skill-bush__image" src="<?= $skill_bush['url'] ?>"
-         alt="<?= $skill_bush['alt'] ?>"
-    >
-</section>
+    <section class="education">
+        <h2 class="sro">Parcours scolaire</h2>
 
-<section class="education">
-    <h2 class="sro">Parcours scolaire</h2>
-
-    <div class="education__content">
-        <div class="postit">
-            <p class="education__title"> <?= $title_education_1 ?> </p>
-            <p class="education__text"> <?= $text_education_1 ?> </p>
-        </div>
-        <img class="education__image"
-             src="<?= $image_education_1['url'] ?>"
-             alt="<?= $image_education_1['alt'] ?>"
-             width="<?= $image_education_1['width'] ?>"
-             height="<?= $image_education_1['height'] ?>"
-        >
-    </div>
-
-    <div class="education__content">
-        <div class="postit">
-            <p class="education__title"> <?= $title_education_2 ?> </p>
-            <p class="education__text"> <?= $text_education_2 ?> </p>
+        <div class="education__content" itemscope
+             itemtype="https://schema.org/EducationEvent"
+             itemprop="itemListElement">
+            <div class="postit">
+                <p class="education__title" itemprop="name"> <?= $title_education_1 ?> </p>
+                <p class="education__text" itemprop="description"> <?= $text_education_1 ?> </p>
+            </div>
+            <img class="education__image"
+                 src="<?= $image_education_1['url'] ?>"
+                 alt="<?= $image_education_1['alt'] ?>"
+                 width="<?= $image_education_1['width'] ?>"
+                 height="<?= $image_education_1['height'] ?>"
+                 itemprop="image"
+            >
         </div>
 
-        <img class="education__image"
-             src="<?= $image_education_2['url'] ?>"
-             alt="<?= $image_education_2['alt'] ?>"
-             width="<?= $image_education_2['width'] ?>"
-             height="<?= $image_education_2['height'] ?>"
-        >
-    </div>
+        <div class="education__content" itemscope
+             itemtype="https://schema.org/EducationEvent" itemprop="itemListElement">
+            <div class="postit">
+                <p class="education__title" itemprop="name"> <?= $title_education_2 ?> </p>
+                <p class="education__text" itemprop="description"> <?= $text_education_2 ?> </p>
+            </div>
 
-    <div class="education__content">
-        <div class="postit">
-            <p class="education__title"> <?= $title_education_3 ?> </p>
-            <p class="education__text"> <?= $text_education_3 ?> </p>
+            <img class="education__image"
+                 src="<?= $image_education_2['url'] ?>"
+                 alt="<?= $image_education_2['alt'] ?>"
+                 width="<?= $image_education_2['width'] ?>"
+                 height="<?= $image_education_2['height'] ?>"
+                 itemprop="image"
+            >
         </div>
 
-        <img class="education__image"
-             src="<?= $image_education_3['url'] ?>"
-             alt="<?= $image_education_3['alt'] ?>"
-             width="<?= $image_education_3['width'] ?>"
-             height="<?= $image_education_3['height'] ?>"
-        >
-    </div>
+        <div class="education__content" itemscope
+             itemtype="https://schema.org/EducationEvent" itemprop="itemListElement">
+            <div class="postit">
+                <p class="education__title" itemprop="name"> <?= $title_education_3 ?> </p>
+                <p class="education__text" itemprop="description"> <?= $text_education_3 ?> </p>
+            </div>
 
-    <div class="education__content">
-        <div class="postit">
-            <p class="education__title"> <?= $title_education_4 ?> </p>
-            <p class="education__text"> <?= $text_education_4 ?> </p>
+            <img class="education__image"
+                 src="<?= $image_education_3['url'] ?>"
+                 alt="<?= $image_education_3['alt'] ?>"
+                 width="<?= $image_education_3['width'] ?>"
+                 height="<?= $image_education_3['height'] ?>"
+                 itemprop="image"
+            >
         </div>
 
-        <img class="education__image"
-             src="<?= $image_education_4['url'] ?>"
-             alt="<?= $image_education_4['alt'] ?>"
-             width="<?= $image_education_4['width'] ?>"
-             height="<?= $image_education_4['height'] ?>"
-        >
-    </div>
+        <div class="education__content" itemscope
+             itemtype="https://schema.org/EducationEvent" itemprop="itemListElement">
+            <div class="postit">
+                <p class="education__title" itemprop="name"> <?= $title_education_4 ?> </p>
+                <p class="education__text" itemprop="description"> <?= $text_education_4 ?> </p>
+            </div>
 
-    <div class="education__content">
-        <div class="postit">
-            <p class="education__title"> <?= $title_education_5 ?> </p>
-            <p class="education__text"> <?= $text_education_5 ?> </p>
+            <img class="education__image"
+                 src="<?= $image_education_4['url'] ?>"
+                 alt="<?= $image_education_4['alt'] ?>"
+                 width="<?= $image_education_4['width'] ?>"
+                 height="<?= $image_education_4['height'] ?>"
+                 itemprop="image"
+            >
         </div>
 
-        <img class="education__image"
-             src="<?= $image_education_5['url'] ?>"
-             alt="<?= $image_education_5['alt'] ?>"
-             width="<?= $image_education_5['width'] ?>"
-             height="<?= $image_education_5['height'] ?>"
-        >
-    </div>
-</section>
+        <div class="education__content" itemscope
+             itemtype="https://schema.org/EducationEvent" itemprop="itemListElement">
+            <div class="postit">
+                <p class="education__title" itemprop="name"> <?= $title_education_5 ?> </p>
+                <p class="education__text" itemprop="description"> <?= $text_education_5 ?> </p>
+            </div>
 
+            <img class="education__image"
+                 src="<?= $image_education_5['url'] ?>"
+                 alt="<?= $image_education_5['alt'] ?>"
+                 width="<?= $image_education_5['width'] ?>"
+                 height="<?= $image_education_5['height'] ?>"
+                 itemprop="image"
+            >
+        </div>
+    </section>
+</main>
 <?php get_footer(); ?>

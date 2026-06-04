@@ -28,18 +28,19 @@ $query = new WP_Query([
     'posts_per_page' => 3, //Le nombre que l'on veut afficher.
 ]);
 ?>
-
+<main itemscope itemtype="https://schema.org/WebPage">
 <div class="section__title">
     <p class="suptitle"><?= $suptitle ?></p>
     <section>
-        <h2 class="title"> <?= $title ?> </h2>
+        <h1 class="title"> <?= $title ?> </h1>
         <p class="subtitle"><?= $subtitle ?></p>
     </section>
 </div>
 
 <!-- Afficher tous les projets -->
-<section class="project">
+<section class="project" itemscope itemtype="https://schema.org/ItemList">
     <h2 class="sro">Mes projets</h2>
+    <?php $position = 1; ?>
     <?php if ($query->have_posts()):
     while ($query->have_posts()): $query->the_post();
         $project_title = get_field('project_title');
@@ -47,15 +48,19 @@ $query = new WP_Query([
         $project_button = get_field('project_button');
         $project_image = get_field('project_image');
         ?>
-        <article class="project__container">
+        <article class="project__container" itemscope
+                 itemtype="https://schema.org/CreativeWork"
+                 itemprop="itemListElement">
             <div class="project__content">
                 <?php if ($project_title): ?>
-                    <h3 class="project__title"><?= $project_title ?></h3>
+                    <h3 class="project__title" itemprop="name"><?= $project_title ?></h3>
                 <?php endif; ?>
                 <?php if ($project_description): ?>
-                    <p class="project__text"><?= $project_description ?></p>
+                    <p class="project__text" itemprop="description"><?= $project_description ?></p>
                 <?php endif; ?>
+                <meta itemprop="position" content="<?= $position++ ?>">
                 <a class="buttons" href="<?= get_the_permalink() ?>"
+                   itemprop="url"
                    title="Lien vers mon projet : <?= get_the_title() ?>"
                    target="_blank">EN SAVOIR PLUS !</a>
             </div>
@@ -64,6 +69,7 @@ $query = new WP_Query([
                 <div class="stack">
                     <div class="card card-1">
                         <img class="project__image"
+                             itemprop="image"
                              src="<?= $project_image['url'] ?>"
                              alt="<?= $project_image['alt'] ?>"
                              width="<?= $project_image['width'] ?>"
@@ -110,13 +116,13 @@ $query = new WP_Query([
 </section>
 
 <!-- Jacquemin-Fanti Marie -->
-<section class="about-me">
+<section class="about-me" itemscope itemtype="https://schema.org/Person">
     <div class="about-me__content">
         <?php if ($title_about_me): ?>
-            <h3 class="about-me__title"> <?= $title_about_me ?> </h3>
+            <h3 class="about-me__title" itemprop="name"> <?= $title_about_me ?> </h3>
         <?php endif; ?>
         <?php if ($description_about_me): ?>
-            <p class="about-me__text"> <?= $description_about_me ?> </p>
+            <p class="about-me__text" itemprop="description"> <?= $description_about_me ?> </p>
         <?php endif; ?>
         <?php if ($button_about_me): ?>
             <a class="buttons" href="<?= $button_about_me['url'] ?>"><?= $button_about_me['title'] ?></a>
@@ -125,6 +131,7 @@ $query = new WP_Query([
     <div class="about-me__content-image">
         <?php if ($image_about_me): ?>
             <img class="about-me__image"
+                 itemprop="image"
                  src="<?= $image_about_me['url'] ?>"
                  alt="<?= $image_about_me['alt'] ?>"
                  width="<?= $image_about_me['width'] ?>"
@@ -133,6 +140,6 @@ $query = new WP_Query([
         <?php endif; ?>
     </div>
 </section>
-
+</main>
 <?php get_footer(); ?>
 

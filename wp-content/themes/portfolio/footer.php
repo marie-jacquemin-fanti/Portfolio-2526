@@ -16,37 +16,41 @@ $logo = get_field('logo');
 <footer class="footer">
     <div class="footer__container">
         <img class="footer__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/litle-me.svg"
-             alt=""
+             alt="Illustration de profil"
         >
         <!-- Navigation -->
-        <nav class="footer__nav" aria-labelledby="  footer-nav-title">
-            <h2 class="footer__title">Navigation</h2>
+        <nav class="footer__nav" aria-labelledby="footer-nav-title">
+            <h2 id="footer-nav-title" class="footer__title">Navigation</h2>
             <ul class="footer__list" role="list">
                 <?php foreach ($footer as $link) : ?>
                     <li class="footer__item">
-                        <a class="footer__link" href="<?= $link->href ?>"><?= $link->label ?></a>
+                        <a class="footer__link" href="<?= esc_url($link->href); ?>"><?= esc_html($link->label); ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </nav>
         <!-- Coordonnées -->
-        <section class="footer__infos" aria-labelledby="footer-contact-title">
-            <h2 class="footer__title">Coordonnées</h2>
+        <section class="footer__infos" aria-labelledby="footer-contact-title" itemscope
+                 itemtype="https://schema.org/Person">
+            <h2 id="footer-contact-title" class="footer__title">Coordonnées</h2>
 
             <address class="footer__address">
                 <ul class="footer__contact-list">
                     <li class="footer__item">
-                            <a href="tel:+33619997118" class="footer__link">+33 6 19 99 71 18</a>
+                        <a href="tel:+33619997118" class="footer__link" itemprop="telephone"
+                           aria-label="Appeler le numéro +33 6 19 99 71 18">+33 6 19 99 71 18</a>
                     </li>
                     <li class="footer__item">
-                            <a href="mailto:<?= antispambot($email); ?>"
-                               class="footer__link">mariejacqueminfanti@gmail.com</a>
+                        <a href="mailto:<?= antispambot($email); ?>"
+                           class="footer__link" itemprop="email">mariejacqueminfanti@gmail.com</a>
                     </li>
                     <li class="footer__item">
-                            <a href="https://www.linkedin.com/in/marie-jacquemin-fanti-408466250/" class="footer__link">Linkedin</a>
+                        <a href="https://www.linkedin.com/in/marie-jacquemin-fanti-408466250/" class="footer__link"
+                           itemprop="sameAs">Linkedin</a>
                     </li>
                     <li class="footer__item">
-                            <a href="https://github.com/marie-jacquemin-fanti" class="footer__link">GitHub</a>
+                        <a href="https://github.com/marie-jacquemin-fanti" class="footer__link"
+                           itemprop="sameAs">GitHub</a>
                     </li>
                 </ul>
             </address>
@@ -57,7 +61,7 @@ $logo = get_field('logo');
 
 
         <p class="footer__copyright">
-            <strong>©2026</strong> Créé par Marie Jacquemin-Fanti. Tous droits réservés.
+            <strong>©2026</strong> Créé par <span itemprop="name">Marie Jacquemin-Fanti</span>. Tous droits réservés.
         </p>
     </div>
 </footer>
