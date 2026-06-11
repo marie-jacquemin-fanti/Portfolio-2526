@@ -1,4 +1,21 @@
 @media screen and (min-width: 1024px) {
+ //Message de confirmation
+  .message__confirmation {
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem 10rem;
+    border: 1px solid var(--white-color);
+    color: var(--white-color);
+  }
+  .message__confirmation--error{
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem 10rem;
+    border: 1px solid var(--orange-color);
+    color: var(--orange-color);
+  }
   //Navigation
   .navigation__burger {
     display: none;

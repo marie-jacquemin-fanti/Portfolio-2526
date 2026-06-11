@@ -28,8 +28,8 @@
 
 <body>
 <!-- Navigation principale -->
-<nav class="navigation">
-    <h2 class="sro">Menu de navigation</h2>
+<nav aria-label="Navigation principale" class="navigation">
+    <h2 class="sro">Navigation principale</h2>
     <button class="navigation__burger" aria-label="Ouvrir le menu">
         <span></span>
         <span></span>

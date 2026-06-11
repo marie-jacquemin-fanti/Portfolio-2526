@@ -36,7 +36,8 @@ $terms = get_terms([
 
     <h1 class="title_page"><?= esc_html($header) ?></h1>
 
-    <nav class="ressourcesnav">
+    <nav aria-label="Filtres des projets" class="ressourcesnav">
+        <h2 class="sro">Filter</h2>
         <ul class="ressourcesfilter-list">
             <li class="ressourcesfilter-item">
                 <a href="<?= get_post_type_archive_link('project') ?>" class="ressourcesfilter-link <?= $filter === '' ? 'active' : '' ?>">

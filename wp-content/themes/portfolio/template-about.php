@@ -37,7 +37,7 @@ $text_education_5 = get_field('text_education_5');
     <section class="about-me" itemscope itemtype="https://schema.org/Person">
         <div class="about-me__content">
             <?php if ($title_about_me): ?>
-                <h3 class="about-me__title" itemprop="jobTitle"> <?= $title_about_me ?> </h3>
+                <h2 class="about-me__title" itemprop="jobTitle"> <?= $title_about_me ?> </h2>
             <?php endif; ?>
             <?php if ($description_about_me): ?>
                 <p class="about-me__text" itemprop="description"> <?= $description_about_me ?> </p>

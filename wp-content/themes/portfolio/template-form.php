@@ -11,26 +11,25 @@
     get_template_part('templates/components/forms/me-contacter');
     get_template_part('templates/components/forms/en/contact');
     ?>
+    <?php
+    $feedback = hepl_session_get('contact_form_feedback') ?? false;
+    $errors = hepl_session_get('contact_form_errors') ?? [];
+    ?>
+    <?php if ($feedback): ?>
+        <div class="message__confirmation">
+            <p><?= __('Votre message a bien été envoyé. Merci à vous !', 'hepl-trad'); ?></p>
+        </div>
+    <?php endif; ?>
+    <?php if ($errors): ?>
+        <div>
+            <p class="message__confirmation--error"><?= __('Attention ! Merci de corriger les erreurs du formulaire.', 'hepl-trad'); ?></p>
+        </div>
+    <?php endif; ?>
     <section class="form__container">
-        <?php
-        $feedback = hepl_session_get('contact_form_feedback') ?? false;
-        $errors = hepl_session_get('contact_form_errors') ?? [];
-        ?>
 
         <h2 class="sro">
             Formulaire de contact
         </h2>
-
-        <?php if ($feedback): ?>
-            <div>
-                <p>Votre message a bien été envoyé. Merci à vous !</p>
-            </div>
-        <?php endif; ?>
-        <?php if ($errors): ?>
-            <div>
-                <p>Attention ! Merci de corriger les erreurs du formulaire.</p>
-            </div>
-        <?php endif; ?>
 
 
         <!-- L'action redirige vers le fichier de base de Wordpress qui dit qui fait quoi. -->
@@ -81,7 +80,7 @@
 
             <input type="hidden" name="action" value="contact_form"/>
             <input type="hidden" name="contact_nonce" value="<?= wp_create_nonce('contact_form'); ?>"/>
-            <button class="buttons" type="submit">Envoyer</button>
+            <button class="buttons" type="submit"><?= __('Envoyer', 'hepl-trad'); ?></button>
         </form>
     </section>
 </main>
