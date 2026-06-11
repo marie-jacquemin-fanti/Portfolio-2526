@@ -19,6 +19,7 @@ function hepl_session_flash($key, $value): void
     $_SESSION['hepl_flash'][$key] = $value;
 }
 
+
 function hepl_session_get($key)
 {
     if (isset($_SESSION['hepl_flash']) && array_key_exists($key, $_SESSION['hepl_flash'])) {
@@ -162,6 +163,9 @@ add_image_size('square-small', 400, 400, true);
 add_image_size('square-medium', 800, 800, true);
 add_image_size('square-large', 1200, 1200, true);
 
+add_action('init', function() {
+    pll_register_string('archive_project_slug', 'projets');
+});
 
 //Custom Post Type
 register_post_type('project', [ //Nom du tout
@@ -173,7 +177,7 @@ register_post_type('project', [ //Nom du tout
     'show_ui' => true,
     //à mettre s'il est en public false, mais qu'on veut le voir dans le back-office
     'has_archive' => true,
-    'rewrite' => ['slug' => 'projets'],
+    'rewrite' => ['slug' => pll__('projets')],
     'supports' => ['title'],
 ]);
 
@@ -199,3 +203,13 @@ function my_own_mime_types($mimes)
 }
 
 add_filter('upload_mimes', 'my_own_mime_types');
+
+
+/*function remove_admin_menus(): void {
+    if (!current_user_can('manage_options')) { // Seulement les non-admins
+        remove_menu_page('edit.php');
+        remove_menu_page('edit-comments.php');
+        remove_menu_page('upload.php');
+    }
+}
+add_action('admin_menu', 'remove_admin_menus');*/

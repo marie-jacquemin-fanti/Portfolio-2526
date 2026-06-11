@@ -7,7 +7,6 @@ $suptitle = get_field('suptitle');
 $title = get_field('title');
 $subtitle = get_field('subtitle');
 
-
 //Texte média 1
 $text_media_title_1 = get_field('text-media_title_1');
 $text_media_description_1 = get_field('text-media-description_1');
@@ -47,6 +46,8 @@ $query = new WP_Query([
         $project_description = get_field('project_description');
         $project_button = get_field('project_button');
         $project_image = get_field('project_image');
+        $project_button = get_field('project_button');
+        $project_button_text = get_field('project_button_text');
         ?>
         <article class="project__container" itemscope
                  itemtype="https://schema.org/CreativeWork"
@@ -59,10 +60,12 @@ $query = new WP_Query([
                     <p class="project__text" itemprop="description"><?= $project_description ?></p>
                 <?php endif; ?>
                 <meta itemprop="position" content="<?= $position++ ?>">
-                <a class="buttons" href="<?= get_the_permalink() ?>"
+                <a class="buttons"
+                   href="<?= $project_button['url'] ?>"
                    itemprop="url"
-                   title="Lien vers mon projet : <?= get_the_title() ?>"
-                   target="_blank">EN SAVOIR PLUS !</a>
+                   title="Lien vers mon projet : <?= get_the_title() ?>">
+                    <?= $project_button_text ?>
+                </a>
             </div>
 
             <?php if ($project_image): ?>
@@ -110,7 +113,9 @@ $query = new WP_Query([
             <p class="interest__text"> <?= $text_media_description_1 ?> </p>
         <?php endif; ?>
         <?php if ($text_media_button_1): ?>
-            <a class="buttons" href="<?= $text_media_button_1['url'] ?>"><?= $text_media_button_1['title'] ?></a>
+            <a class="buttons" href="<?= pll_home_url() . pll__('projets') ?>">
+                <?= $text_media_button_1['title'] ?>
+            </a>
         <?php endif; ?>
     </div>
 </section>

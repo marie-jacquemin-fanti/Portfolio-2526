@@ -3,11 +3,12 @@
   .navigation__burger {
     display: none;
   }
+
   .navigation {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem 17.5rem;
+    padding: 2rem 5.5rem;
 
     font-family: 'Albert Sans', sans-serif;
 
@@ -23,7 +24,7 @@
     a {
       position: relative;
 
-      font-size: 1.25rem;
+      font-size: 1.12rem;
       color: white;
       text-decoration: none;
 
@@ -61,9 +62,55 @@
       }
     }
   }
+  //Filtre
+  .ressourcesfilter-item a {
+    &.active {
+      background-color: var(--orange-color);
+      color: var(--white-color);
 
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .ressourcesfilter-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
   //Bouton
-  .buttons {
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+  }
+  .ressourcesfilter-link {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    text-decoration: none;
+    border-radius: 1.563rem;
+    display: inline-block;
+    font-size: 1.25rem;
+    padding: 0.813rem 1.25rem;
+    margin: 0.625rem 0;
+
+    transition: background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.2s ease;
+
+    &:hover {
+      background-color: var(--orange-color);
+      color: var(--white-color);
+    }
+  }
+
+  .buttons, .project-links__buttons{
     font-family: var(--font-family-alberSansLight), sans-serif;
     background-color: var(--white-color);
     color: var(--black-color);
@@ -119,13 +166,6 @@
     font-size: 1.125rem;
     line-height: 2.188rem;
     max-width: 37.5rem;
-  }
-
-  .navigation__link {
-
-    background-color: var(--black-color);
-    text-decoration: none;
-
   }
 
   //projets
@@ -400,7 +440,8 @@
       display: block;
       padding: -50px;
     }
-    &__image-container{
+
+    &__image-container {
       display: flex;
       justify-content: center;
       align-items: center;

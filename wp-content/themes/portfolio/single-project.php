@@ -35,6 +35,9 @@
     $rendering_image_1 = get_field('rendering_image_1');
     $rendering_image_2 = get_field('rendering_image_2');
     $rendering_image_3 = get_field('rendering_image_3');
+
+    $github_link = get_field('github_link');
+    $site_link = get_field('site_link');
     ?>
     <article itemscope itemtype="https://schema.org/CreativeWork">
         <h1 class="title_page" itemprop="name"><?= get_the_title() ?></h1>
@@ -235,7 +238,25 @@
                 </div>
             </div>
         </div>
+
+        <?php if ($github_link || $site_link): ?>
+            <div class="project-links">
+                <?php if ($github_link): ?>
+                    <a class="project-links__buttons" href="<?= esc_url($github_link) ?>" target="_blank"
+                       rel="noopener noreferrer">
+                        <?= __('Voir sur GitHub', 'hepl-trad'); ?>
+                    </a>
+                <?php endif; ?>
+                <?php if ($site_link): ?>
+                    <a class="project-links__buttons" href="<?= esc_url($site_link) ?>" target="_blank"
+                       rel="noopener noreferrer">
+                        <?= __('Voir le site', 'hepl-trad'); ?>
+                    </a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
     </article>
+
 <?php endwhile; else: ?>
     <p class="project-section__text"><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 <?php endif; ?>

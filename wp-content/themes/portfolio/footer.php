@@ -57,11 +57,13 @@ $logo = get_field('logo');
         </section>
     </div>
     <div class="footer__bottom">
-        <a class="footer__item-condition" href="#">Mentions légales</a>
-
+        <p class="footer__copyright"><?= __('Mentions légales', 'hepl-trad'); ?></p>
 
         <p class="footer__copyright">
-            <strong>©2026</strong> Créé par <span itemprop="name">Marie Jacquemin-Fanti</span>. Tous droits réservés.
+            <strong>©2026</strong>
+            <?= __('Créé par', 'hepl-trad'); ?>
+            <span itemprop="name">Marie Jacquemin-Fanti</span>.
+            <?= __('Tous droits réservés.', 'hepl-trad'); ?>
         </p>
     </div>
 </footer>

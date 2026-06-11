@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Theme Design Web 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dw\n"
-"POT-Creation-Date: 2026-03-20 10:15+0100\n"
-"PO-Revision-Date: 2026-03-20 10:15+0100\n"
+"POT-Creation-Date: 2026-06-11 13:23+0200\n"
+"PO-Revision-Date: 2026-06-11 13:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -18,17 +18,34 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-training.php:57 index.php:9 search.php:13 single-training.php:12
-#: templates/components/cards-formations/cards-formations.php:102
+#: footer.php:60
+msgid "Mentions légales"
+msgstr "Lega informations"
+
+#: footer.php:64
+msgid "Créé par"
+msgstr "Made by"
+
+#: footer.php:66
+msgid "Tous droits réservés."
+msgstr "All right reserved."
+
+#: single-project.php:247
+msgid "Voir sur GitHub"
+msgstr "View on GitHub"
+
+#: single-project.php:253
+msgid "Voir le site"
+msgstr "See the website"
+
+#: single-project.php:261
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: single-training.php:3
-msgid "Je suis la page single"
-msgstr "Je suis la page single EN"
+#~ msgid "Je suis la page single"
+#~ msgstr "Je suis la page single EN"
 
-#: single-training.php:4
 #, fuzzy
-#| msgid "Je suis la page single"
-msgid "Je suis la page single2"
-msgstr "Je suis la page single EN"
+#~| msgid "Je suis la page single"
+#~ msgid "Je suis la page single2"
+#~ msgstr "Je suis la page single EN"
