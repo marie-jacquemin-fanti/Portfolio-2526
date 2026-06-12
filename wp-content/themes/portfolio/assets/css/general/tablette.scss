@@ -1,4 +1,22 @@
 @media screen and (max-width: 1024px) and (min-width: 600px) {
+  //Message de confirmation
+  .message__confirmation {
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem 3rem;
+    border: 1px solid var(--white-color);
+    color: var(--white-color);
+  }
+  .message__confirmation--error{
+    font-family: var(--font-family-SegoePrint), sans-serif;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem 3rem;
+    border: 1px solid var(--orange-color);
+    color: var(--orange-color);
+  }
+
   //Navigation
   .navigation__burger{
     display: none;
@@ -61,7 +79,45 @@
       }
     }
   }
+  //Filtre
+  .ressourcesfilter-item a {
+    &.active {
+      background-color: var(--orange-color);
+      color: var(--white-color);
 
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .ressourcesfilter-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+  .ressourcesfilter-link {
+    font-family: var(--font-family-alberSansLight), sans-serif;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    text-decoration: none;
+    border-radius: 1.563rem;
+    display: inline-block;
+    font-size: 1.25rem;
+    padding: 0.5rem 0.938rem;
+    margin: 0.625rem 0;
+    transition:
+            background-color 0.35s ease,
+            color 0.35s ease,
+            transform 0.2s ease;
+
+    &:hover {
+      background-color: var(--orange-color);
+      color: var(--white-color);
+    }
+  }
   //Bouton
   .project-links {
     display: flex;

@@ -205,11 +205,11 @@ function my_own_mime_types($mimes)
 add_filter('upload_mimes', 'my_own_mime_types');
 
 
-/*function remove_admin_menus(): void {
-    if (!current_user_can('manage_options')) { // Seulement les non-admins
+function remove_admin_menus(): void {
+    if (!current_user_can('manage_options')) {
         remove_menu_page('edit.php');
         remove_menu_page('edit-comments.php');
         remove_menu_page('upload.php');
     }
 }
-add_action('admin_menu', 'remove_admin_menus');*/
+add_action('admin_menu', 'remove_admin_menus');

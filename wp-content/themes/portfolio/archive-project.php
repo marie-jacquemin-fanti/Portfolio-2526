@@ -41,7 +41,7 @@ $terms = get_terms([
         <ul class="ressourcesfilter-list">
             <li class="ressourcesfilter-item">
                 <a href="<?= get_post_type_archive_link('project') ?>" class="ressourcesfilter-link <?= $filter === '' ? 'active' : '' ?>">
-                    Tout
+                    <?= __('Tout', 'hepl-trad'); ?>
                 </a>
             </li>
             <?php foreach ($terms as $term) : ?>
@@ -73,7 +73,7 @@ $terms = get_terms([
                  itemprop="itemListElement">
             <div class="project__content">
                 <?php if ($project_title): ?>
-                    <h3 class="project__title" itemprop="name"><?= $project_title ?></h3>
+                    <h2 class="project__title" itemprop="name"><?= $project_title ?></h2>
                 <?php endif; ?>
                 <?php if ($project_description): ?>
                     <p class="project__text" itemprop="description"><?= $project_description ?></p>

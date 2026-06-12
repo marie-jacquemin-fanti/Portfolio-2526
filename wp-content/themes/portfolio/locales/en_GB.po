@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Theme Design Web 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dw\n"
-"POT-Creation-Date: 2026-06-11 14:52+0200\n"
-"PO-Revision-Date: 2026-06-11 14:53+0200\n"
+"POT-Creation-Date: 2026-06-12 11:11+0200\n"
+"PO-Revision-Date: 2026-06-12 11:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -17,6 +17,10 @@ msgstr ""
 "X-Poedit-KeywordsList: __hepl;__;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: archive-project.php:44
+msgid "Tout"
+msgstr "All"
 
 #: footer.php:60
 msgid "Mentions légales"
@@ -42,15 +46,15 @@ msgstr "See the website"
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: template-form.php:20
+#: template-form.php:22
 msgid "Votre message a bien été envoyé. Merci à vous !"
 msgstr "Your message has been sent. Thank you!"
 
-#: template-form.php:25
+#: template-form.php:27
 msgid "Attention ! Merci de corriger les erreurs du formulaire."
 msgstr "Attention! Please correct the errors in the form."
 
-#: template-form.php:83
+#: template-form.php:85
 msgid "Envoyer"
 msgstr "Send"
 

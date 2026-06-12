@@ -51,7 +51,7 @@
             <div class="project-section__container">
                 <div class="project-section__content">
                     <?php if ($process_title): ?>
-                        <h3 class="project-section__title"><?= $process_title ?></h3>
+                        <h2 class="project-section__title"><?= $process_title ?></h2>
                     <?php endif; ?>
                     <?php if ($process_description): ?>
                         <p class="project-section__text"><?= $process_description ?></p>
@@ -98,7 +98,7 @@
             <div class="project-section__container">
                 <div class="project-section__content">
                     <?php if ($my_inspiration_title): ?>
-                        <h3 class="project-section__title"><?= $my_inspiration_title ?></h3>
+                        <h2 class="project-section__title"><?= $my_inspiration_title ?></h2>
                     <?php endif; ?>
                     <?php if ($my_inspiration_description): ?>
                         <p class="project-section__text"><?= $my_inspiration_description ?></p>
@@ -136,7 +136,7 @@
             <div class="project-section__container">
                 <div class="project-section__content">
                     <?php if ($my_design_title): ?>
-                        <h3 class="project-section__title" class="project-section__title"><?= $my_design_title ?></h3>
+                        <h2 class="project-section__title" class="project-section__title"><?= $my_design_title ?></h2>
                     <?php endif; ?>
                     <?php if ($my_design_description): ?>
                         <p class="project-section__text"><?= $my_design_description ?></p>
@@ -172,7 +172,7 @@
             <div class="project-section__container">
                 <div class="project-section__content">
                     <?php if ($realisation_title): ?>
-                        <h3 class="project-section__title"><?= $realisation_title ?></h3>
+                        <h2 class="project-section__title"><?= $realisation_title ?></h2>
                     <?php endif; ?>
                     <p class="project-section__text"><?= $realisation_description ?></p>
                 </div>
@@ -206,7 +206,7 @@
             <div class="project-section__container">
                 <div class="project-section__content">
                     <?php if ($rendering_title): ?>
-                        <h3 class="project-section__title"><?= $rendering_title ?></h3>
+                        <h2 class="project-section__title"><?= $rendering_title ?></h2>
                     <?php endif; ?>
                     <p class="project-section__text"><?= $rendering_description ?></p>
                 </div>

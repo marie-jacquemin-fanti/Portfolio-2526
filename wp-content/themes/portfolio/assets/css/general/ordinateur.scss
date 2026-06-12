@@ -1,5 +1,9 @@
 @media screen and (min-width: 1024px) {
- //Message de confirmation
+  body{
+    max-width: 1495px;
+    margin: 0 auto;
+  }
+  //Message de confirmation
   .message__confirmation {
     font-family: var(--font-family-SegoePrint), sans-serif;
     font-size: 1.125rem;
@@ -98,14 +102,6 @@
     padding-top: 1rem;
     gap: 1rem;
   }
-  //Bouton
-  .project-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-  }
   .ressourcesfilter-link {
     font-family: var(--font-family-alberSansLight), sans-serif;
     background-color: var(--white-color);
@@ -126,6 +122,15 @@
       color: var(--white-color);
     }
   }
+  //Bouton
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
 
   .buttons, .project-links__buttons{
     font-family: var(--font-family-alberSansLight), sans-serif;

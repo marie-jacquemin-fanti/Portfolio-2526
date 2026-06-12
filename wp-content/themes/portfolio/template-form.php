@@ -14,6 +14,8 @@
     <?php
     $feedback = hepl_session_get('contact_form_feedback') ?? false;
     $errors = hepl_session_get('contact_form_errors') ?? [];
+    unset($_SESSION['contact_form_feedback']);
+    unset($_SESSION['contact_form_errors']);
     ?>
     <?php if ($feedback): ?>
         <div class="message__confirmation">
