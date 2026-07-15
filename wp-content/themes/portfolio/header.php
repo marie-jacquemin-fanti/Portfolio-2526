@@ -18,9 +18,10 @@
 
     <meta property="og:description"
           content="Découvrez mes projets UI/UX et mon univers créatif.">
-
+<!--TODO : non -->
     <meta property="og:image"
           content="https://monsite.be/share.jpg">
+    <!--TODO : non -->
 
     <meta property="og:url" content="https://monsite.be">
 </head>
